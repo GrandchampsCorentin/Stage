@@ -1,6 +1,6 @@
 # Démarche pour le projet
 
-1. Découverte du concept Elastic Search, jargon (doc à faire)
+1. Découverte du concept Elastic Search, jargon, définition des besoins (doc à faire)
 1. Installation sur laragon (en local sur ton poste) d'une instance ES (doc à faire)
 1. Alimentation de la base ES (doc à faire)
 1. Quelques tests à réaliser et à valider ensemble (formation pour transmission d'infos + doc Eric&moi)
