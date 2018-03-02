@@ -18,10 +18,10 @@
 
 ## Quelques tutos/docs au hasard
 
-- https://laravel.com/docs/5.5/scout
-- https://medium.com/@babenko.i.a/how-to-make-laravel-and-elasticsearch-become-friends-55ed7690331c
 - https://www.grafikart.fr/tutoriels/serveur/elastic-search-626
 - https://slack-redir.net/link?url=https%3A%2F%2Fnews.humancoders.com%2Fitems%2Fsearch%3Fq%3Delasticsearch%26utf8%3D%25E2%259C%2593
+- https://laravel.com/docs/5.5/scout
+- https://medium.com/@babenko.i.a/how-to-make-laravel-and-elasticsearch-become-friends-55ed7690331c
 - ...
 
 GL&HF :)
