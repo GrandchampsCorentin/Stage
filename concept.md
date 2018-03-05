@@ -12,15 +12,14 @@ Un *Cluster* est une collection composée de 1 à X *Nœuds* (Node) qui se parta
 Chaque *Cluster* est identifié par un identifiant unique qui par défaut est "elasticsearch".
 L'identifiant du *Cluster* permettra de l'associer avec des *Nœuds*. 
 
-Il faut faire attention à ne pas réutiliser les mêmes noms de *Cluster* dans différents environnements, cela pourrait induire en erreur la jointure des *Nœuds* ! /!\
+Il faut faire attention à ne pas réutiliser les mêmes noms de *Cluster* dans différents environnements, cela pourrait provoquer des erreurs de jointure entre *Nœuds* et *Cluster* ! /!\
 Par exemple, vous pouvez utiliser logging-dev, logging-stage et logging-prod pour les clusters de développement, de transfert et de production.
 
 *Ordre d'idée* : Parc informatique
 
-/!\ Les Noeuds ou Nodes /!\
+*** Les Nœuds ou Nodes
 
-Un *Nœud* est un serveur unique, rattaché à un *Cluster* (grâce à l'identifiant de celui-ci). 
-Les *Nœuds* stockent vos données et soutiennent le travail d’indexation et de recherche du *Cluster* auquel ils sont liés. 
+Les *Nœuds* stockent vos données et soutiennent le travail d’indexation et de recherche du *Cluster* auquel ils sont liés (grâce à l'identifiant de celui-ci). 
 
 Chaque *Nœud* possède son propre identifiant unique UUID (Universally Unique IDentifier) qui lui est assigné dès son démarrage. Ceci permet d'identifier quel serveur sur le réseau correspond à quel *Nœud* dans les *Clusters* existant. 
 
