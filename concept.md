@@ -19,7 +19,7 @@ Par exemple, vous pouvez utiliser logging-dev, logging-stage et logging-prod pou
 
 ### Les Nœuds ou Nodes
 
-Les *Nœuds* stockent vos données et soutiennent le travail d’indexation et de recherche du *Cluster* auquel ils sont liés (grâce à l'identifiant de celui-ci). 
+Les *Nœuds* stockent vos données et soutiennent le travail d’indexation et de recherche du *Cluster* auquel ils sont liés (liaison réalisée grâce à l'identifiant de celui-ci). 
 
 Chaque *Nœud* possède son propre identifiant unique UUID (Universally Unique IDentifier) qui lui est assigné dès son démarrage. Ceci permet d'identifier quel serveur sur le réseau correspond à quel *Nœud* dans les *Clusters* existant. 
 
