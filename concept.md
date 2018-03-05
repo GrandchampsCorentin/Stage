@@ -17,7 +17,7 @@ Par exemple, vous pouvez utiliser logging-dev, logging-stage et logging-prod pou
 
 *Ordre d'idée* : Parc informatique
 
-*** Les Nœuds ou Nodes
+### Les Nœuds ou Nodes
 
 Les *Nœuds* stockent vos données et soutiennent le travail d’indexation et de recherche du *Cluster* auquel ils sont liés (grâce à l'identifiant de celui-ci). 
 
