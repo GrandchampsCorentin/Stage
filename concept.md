@@ -7,4 +7,4 @@
 * C’est un moteur de recherche « noSPOF » (no Single Point Of Failure).
 * Il utilise une base de données NoSQL.
 * Il utilise la méthode REST pour gérer ses index : L’indexation des données s’effectue à partir de requêtes HTTP PUT. La recherche des données s’effectue avec des requêtes HTTP GET. Le flux d’informations est codé selon le format JSON.
-* Il est associé à deux autres produits open source que sont Kibana et Logstash : ceux-ci sont respectivement un outil de visualisation de données et un `<a ref="https://fr.wikipedia.org/wiki/Extract-transform-load">ETL</a>`.
+* Il est associé à deux autres produits open source que sont Kibana et Logstash : ceux-ci sont respectivement un outil de visualisation de données et un [ETL](https://fr.wikipedia.org/wiki/Extract-transform-load)
