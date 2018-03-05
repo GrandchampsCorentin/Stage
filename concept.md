@@ -1,8 +1,8 @@
 # La base
-/!\
-/*Elasticsearch est un serveur utilisant Lucene pour l'indexation et la recherche des données. Il fournit un moteur de recherche distribué et multi-entité à travers une interface REST.*/
 
-# Du plus grand au plus petit
+Elasticsearch est un moteur de recherche open-source, basé sur le software open source d'Apache *Lucene*, largement distribuable, facilement évolutif et de qualité professionnelle. Accessible grâce à une API étendue et élaborée, Elasticsearch peut alimenter des recherches extrêmement rapides.
+
+# Du plus grand au plus petit : les termes importants
 
 ### Le Cluster
 
@@ -47,7 +47,7 @@ Un *Index* peut contenir une masse très importante d'informations et de donnée
 
 De ce fait il est possible de découper en plusieurs éclats (*Shards*) un *Index* afin qu'il soit contenu sur plusieurs *Nœuds*. 
 
-L'idée sera donc de diviser le poids de l'*Index* et d'augmenter les performances de recherche en proposant plusieurs accès sur le même Index.
+L'idée sera donc de diviser le poids de l'*Index* et d'augmenter les performances de recherche en proposant plusieurs accès sur ce même Index.
 
 #### Replicas
 
