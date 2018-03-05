@@ -1,4 +1,4 @@
-# La base
+# Introduction
 
 Elasticsearch est un moteur de recherche open-source, basé sur le software open source d'Apache *Lucene*, largement distribuable, facilement évolutif et de qualité professionnelle. Accessible grâce à une API étendue et élaborée, Elasticsearch peut alimenter des recherches extrêmement rapides.
 
