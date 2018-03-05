@@ -15,7 +15,7 @@ L'identifiant du *Cluster* permettra de l'associer avec des *Nœuds*.
 Il faut faire attention à ne pas réutiliser les mêmes noms de *Cluster* dans différents environnements, cela pourrait induire en erreur la jointure des *Nœuds* ! /!\
 Par exemple, vous pouvez utiliser logging-dev, logging-stage et logging-prod pour les clusters de développement, de transfert et de production.
 
-*Format* : Parc informatique
+*Ordre d'idée* : Parc informatique
 
 /!\ Les Noeuds ou Nodes /!\
 
@@ -26,7 +26,7 @@ Chaque *Nœud* possède son propre identifiant unique UUID (Universally Unique I
 
 Par défaut, les *Nœuds* sont joins avec le *Cluster* identifié par "elasticsearch". 
 
-*Format* : Serveur
+*Ordre d'idée* : Serveur
 
 ### L'Index
 
@@ -60,7 +60,7 @@ On en tire deux gros avantages :
 Par défaut, chaque Index est découpé en 5 *Shards* et possède 1 *Replica*, soit, sur une configuration avec deux *Nœuds*, 10 *Shards* par Index (dont 5 *Shards* répliqués = 1 *Relica*).
 
 
-*Format* : Disque Dur
+*Ordre d'idée* : Disque Dur
 
 ### Les Documents
 
@@ -68,5 +68,5 @@ Par défaut, chaque Index est découpé en 5 *Shards* et possède 1 *Replica*, s
 
 Dans un même *Index*, il est possible de créer des relations parent/enfant entre deux Documents.
 
-*Format* : Fichier
+*Ordre d'idée* : Fichier
 
