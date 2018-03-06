@@ -46,9 +46,13 @@ En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:
 ![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
 
 Petit décryptage de ce que l'on aperçoit : 
+
 "name" :arrow_right: Nom du Node, ici node1
+
 "cluster_name" :arrow_right: Nom du Cluster, ici cluster1
+
 "cluster_uuid" :arrow_right: Identifiant unique au Cluster
+
 
 
 
