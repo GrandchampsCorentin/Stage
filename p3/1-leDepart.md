@@ -45,13 +45,14 @@ Les deux dernières propositions n'ont pas d’intérêt pour nous.
 
 *  En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:9200/)) vous devriez tomber sur ce bout de code en JSON :
 
+![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
+
 On retrouve bien le nom du Node et du Cluster
 
-"name" > Nom du Node, ici node1
+`"name" > Nom du Node, ici node1`
+`"cluster_name" > Nom du Cluster, ici cluster1`
 
-"cluster_name" > Nom du Cluster, ici cluster1
 
-![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
 
 
 
