@@ -27,4 +27,23 @@ Il est préférable de séparer Home des autres afin de ne pas les écraser lors
 La deuxième fenêtre ressemble à ça par défaut :
 ![ESinstalleur2](/uploads/3d1d95a548958beb0bc356b9e1831fff/ESinstalleur2.PNG)
 
+On peut décocher le démarrage automatique d'ElasticSearch au démarrage de Windows sans toucher au reste. 
+
+La troisième fenêtre dispose de paramètres concernant le Cluster, le Node, les roles du Node, la mémoire allouée, ainsi que des paramètres réseaux. 
+
+On ne modifiera que le nom du Cluster, le nom du Node et accessoirement la mémoire. 
+
+La dernière fenêtre propose un listing de plugins officiels à intégrer lors de l'installation, ainsi que les paramètres du proxy. Aucun plugin n'est à télécharger ici, et il n'existe pas de proxy sur le réseau. 
+
+Une fois ceci fait, ElasticSearch va s'installer et indiquera qu'il s'est installé avec succès. 
+Il vous sera proposé d'ouvrir ES dans le navigateur, ce qui mènera à l'url suivant : [http://localhost:9200/](http://localhost:9200/)
+
+Deux documentations (anglais) bien garnies sont aussi proposées. Elles compléteront la documentation ici présente.
+
+Les deux dernières propositions n'ont pas d’intérêt pour nous. 
+
+En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:9200/)) vous devriez tomber sur ce bout de code en JSON ::1234: 
+![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
+
+
 
