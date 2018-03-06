@@ -5,7 +5,7 @@
 - Il est **crucial** d'installer en premier lieu (ou de mettre à jour) **Java 8 64bits**
 
 Pour ce faire, suivez ce lien : [https://www.java.com/fr/download/manual.jsp](https://www.java.com/fr/download/manual.jsp).
->  /!\ Attention /!\ L'installeur de Java choisira pour vous l'architecture (32 ou 64bits) de Java 8 à installer en fonction de celle de votre navigateur Internet Explorer.
+>  :warning: Attention : L'installeur de Java choisira pour vous l'architecture (32 ou 64bits) de Java 8 à installer en fonction de celle de votre navigateur Internet Explorer.
 
 Pour éviter ce problème d'automatisme de l'installeur proposé par défaut, il est nécessaire de choisir celui qui porte le nom `Windows Hors ligne (64 bits)`, comme montré ci-dessous.
 ![Java8-64bits](/uploads/7c82d20f9d3924f468c68215b4a4c448/Java8-64bits.PNG)
@@ -17,6 +17,14 @@ Téléchargez ElasticSearch 6.2.2 à cette adresse : [https://artifacts.elastic.
 Une fois téléchargé, exécutez le. 
 Une interface graphique vous guidera dans l'installation. 
 Un bouton '?' vous permettra d'obtenir des renseignements et de l'aide sur ce que vous demande l'installateur. 
-![ESinstalleurAide](/uploads/fbeb32c78a724880576942222733ad13/ESinstalleurAide.PNG)
+
 *Aperçu de l'aide d'une des fenêtres de l'installateur*
+![ESinstalleurAide](/uploads/fbeb32c78a724880576942222733ad13/ESinstalleurAide.PNG)
+
+L'installateur va vous proposer d'enregistrer 4 dossiers : Home, Data, Config, et Logs.
+Il est préférable de séparer Home des autres afin de ne pas les écraser lors d'une grosse mise à jour par exemple. Les 3 autres peuvent rester ensemble sans problèmes.
+
+La deuxième fenêtre ressemble à ça par défaut :
+![ESinstalleur2](/uploads/3d1d95a548958beb0bc356b9e1831fff/ESinstalleur2.PNG)
+
 
