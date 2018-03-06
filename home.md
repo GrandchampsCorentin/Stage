@@ -28,13 +28,19 @@ GL&HF :)
 
 # ElasticSearch : Concept et Jargon
 
-- [Concept](/concept)
-- [Jargon](/jargon)
+- [Concept](/p1/1-concept)
+- [Jargon](/p1/2-terminologie)
 
-# Installation du serveur
+# Installation et configuration d'ElasticSearch
 
-# Alimenter ES
+- [Installation](/p2/1-instalES)
+- [Configuration](/p2/2-configES)
+- [Association à Laravel](/p2/3-laravelES)
 
-# Utilisation d'ES
+# Utilisation d'ElasticSearch
+
+- [I) Premiers pas](/p3/1-leDepart)
+- [II) ](/p3/2-)
+- [III) ](/p3/3-)
 
 # Laravel Scout
