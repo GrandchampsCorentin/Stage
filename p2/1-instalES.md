@@ -13,7 +13,11 @@ Pour éviter ce problème d'automatisme de l'installeur proposé par défaut, il
 
 ### L'extension qui facilite la vie
 
-Comme vous êtes des utilisateurs de Google Chrome, il existe une extension (en français) qui propose une interface graphique de gestion et de traitement des Clusters, des Nodes, des Index et des Documents existant. Vous pourrez vous la procurer ici : [Elasticsearch Head](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm)
+Comme vous êtes des utilisateurs de Google Chrome, il existe une extension qui propose une interface graphique de gestion et de traitement des Clusters, des Nodes, des Index et des Documents existant. 
+
+Vous pourrez vous la procurer ici : [Elasticsearch Head](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm)
+
+L'extension n'est pas design mais semble faire le travail comme il se doit. 
 
 ## ElasticSearch
 
