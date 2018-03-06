@@ -56,6 +56,7 @@ Les deux dernières propositions n'ont pas d’intérêt pour nous.
 *  En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:9200/)) vous devriez tomber sur ce bout de code en JSON :
 
 ![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
+*Je vous conseille de passer directement par l'extension Chrome pour faire vos traitements. Dans la section "Autres requêtes", mettez vous en GET, supprimez tout le JSON en dessous et lancez la requête pour avoir le même résultat qu'au dessus.*
 
 On retrouve bien le nom du Node et du Cluster
 
