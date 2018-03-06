@@ -42,8 +42,13 @@ Deux documentations (anglais) bien garnies sont aussi proposées. Elles complét
 
 Les deux dernières propositions n'ont pas d’intérêt pour nous. 
 
-En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:9200/)) vous devriez tomber sur ce bout de code en JSON ::1234: 
+En ouvrant la page web ElasticSearch ([http://localhost:9200/](http://localhost:9200/)) vous devriez tomber sur ce bout de code en JSON :
 ![json1](/uploads/bf5d6e30d6c4acdb05fb8aa3370b94cf/json1.PNG)
+
+Petit décryptage de ce que l'on aperçoit : 
+"name" :arrow_right: Nom du Node, ici node1
+"cluster_name" :arrow_right: Nom du Cluster, ici cluster1
+"cluster_uuid" :arrow_right: Identifiant unique au Cluster
 
 
 
