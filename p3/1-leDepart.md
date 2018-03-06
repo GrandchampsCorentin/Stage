@@ -50,6 +50,7 @@ Les deux dernières propositions n'ont pas d’intérêt pour nous.
 On retrouve bien le nom du Node et du Cluster
 
 `"name" > Nom du Node, ici node1`
+
 `"cluster_name" > Nom du Cluster, ici cluster1`
 
 
