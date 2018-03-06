@@ -12,4 +12,11 @@ Pour éviter ce problème d'automatisme de l'installeur proposé par défaut, il
 
 ## ElasticSearch
 
-Téléchargez ElasticSearch 6.2.2 à cette adresse : [https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi)
+Téléchargez ElasticSearch 6.2.2 à cette adresse : [https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi).
+
+Une fois téléchargé, exécutez le. 
+Une interface graphique vous guidera dans l'installation. 
+Un bouton '?' vous permettra d'obtenir des renseignements et de l'aide sur ce que vous demande l'installateur. 
+![ESinstalleurAide](/uploads/fbeb32c78a724880576942222733ad13/ESinstalleurAide.PNG)
+*Aperçu de l'aide d'une des fenêtres de l'installateur*
+
