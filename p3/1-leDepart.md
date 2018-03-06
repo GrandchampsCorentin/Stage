@@ -53,7 +53,7 @@ On retrouve bien le nom du Node et du Cluster
 
 `"cluster_name" > Nom du Cluster, ici cluster1`
 
-:face_with_cowboy_hat: Bien joué, ElasticSearch est installé. Maintenant il faut le configurer ! 
+Bien joué, ElasticSearch est installé. Maintenant il faut le configurer ! :face_with_cowboy_hat:
 
 
 
