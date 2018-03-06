@@ -32,7 +32,8 @@ On peut décocher le démarrage automatique d'ElasticSearch au démarrage de Win
 
 *  La troisième fenêtre dispose de paramètres concernant le Cluster, le Node, les roles du Node, la mémoire allouée, ainsi que des paramètres réseaux. 
 
-On ne modifiera que le nom du Cluster, le nom du Node et accessoirement la mémoire. 
+On ne modifiera que le nom du Cluster, le nom du Node et accessoirement la mémoire.
+Il faudra aussi déclarer le réseau "hôte" afin de permettre aux Nodes de communiquer entre eux à travers le Cluster.
 
 *  La dernière fenêtre propose un listing de plugins officiels à intégrer lors de l'installation, ainsi que les paramètres du proxy. Aucun plugin n'est à télécharger ici, et il n'existe pas de proxy sur le réseau. 
 
