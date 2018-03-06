@@ -10,3 +10,6 @@ Pour ce faire, suivez ce lien : [https://www.java.com/fr/download/manual.jsp](ht
 Pour éviter ce problème d'automatisme de l'installeur proposé par défaut, il est nécessaire de choisir celui qui porte le nom `Windows Hors ligne (64 bits)`, comme montré ci-dessous.
 ![Java8-64bits](/uploads/7c82d20f9d3924f468c68215b4a4c448/Java8-64bits.PNG)
 
+## ElasticSearch
+
+Téléchargez ElasticSearch 6.2.2 à cette adresse : [https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi)
