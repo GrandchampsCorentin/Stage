@@ -55,6 +55,6 @@ On retrouve bien le nom du Node et du Cluster
 
 Bien joué, ElasticSearch est installé. Maintenant il faut le configurer ! :face_with_cowboy_hat:
 
-*Néanmoins, si l'installation pose problème ou bien si le système d'exploitation n'est pas le même, voici le lien vers la documentation complête de toutes les manières d'installer ES : [https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html).*
+*Néanmoins, si l'installation pose problème ou bien si le système d'exploitation n'est pas le même, voici le lien vers la documentation complête de toutes les manières d'installer ES : [https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html).*
 
 
