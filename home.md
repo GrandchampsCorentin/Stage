@@ -28,12 +28,12 @@ GL&HF :)
 
 # ElasticSearch : Concept et Jargon
 
-- [Concept](/p1/1-concept)
-- [Jargon](/p1/2-terminologie)
+- [Concept](/p1/Concept)
+- [Jargon](/p1/Terminologie)
 
 # Installation et configuration d'ElasticSearch
 
-- [Installation](/p2/1-instalES)
+- [Installation](/p2/Installation)
 - [Configuration](/p2/2-configES)
 - [Association à Laravel](/p2/3-laravelES)
 
