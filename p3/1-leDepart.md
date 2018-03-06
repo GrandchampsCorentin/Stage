@@ -21,19 +21,20 @@ Un bouton '?' vous permettra d'obtenir des renseignements et de l'aide sur ce qu
 *Aperçu de l'aide d'une des fenêtres de l'installateur*
 ![ESinstalleurAide](/uploads/fbeb32c78a724880576942222733ad13/ESinstalleurAide.PNG)
 
-L'installateur va vous proposer d'enregistrer 4 dossiers : Home, Data, Config, et Logs.
+*  Dans la première fenêtre, l'installateur va vous proposer d'enregistrer 4 dossiers : Home, Data, Config, et Logs.
+
 Il est préférable de séparer Home des autres afin de ne pas les écraser lors d'une grosse mise à jour par exemple. Les 3 autres peuvent rester ensemble sans problèmes.
 
-La deuxième fenêtre ressemble à ça par défaut :
+*  La deuxième fenêtre ressemble à ça par défaut :
 ![ESinstalleur2](/uploads/3d1d95a548958beb0bc356b9e1831fff/ESinstalleur2.PNG)
 
 On peut décocher le démarrage automatique d'ElasticSearch au démarrage de Windows sans toucher au reste. 
 
-La troisième fenêtre dispose de paramètres concernant le Cluster, le Node, les roles du Node, la mémoire allouée, ainsi que des paramètres réseaux. 
+*  La troisième fenêtre dispose de paramètres concernant le Cluster, le Node, les roles du Node, la mémoire allouée, ainsi que des paramètres réseaux. 
 
 On ne modifiera que le nom du Cluster, le nom du Node et accessoirement la mémoire. 
 
-La dernière fenêtre propose un listing de plugins officiels à intégrer lors de l'installation, ainsi que les paramètres du proxy. Aucun plugin n'est à télécharger ici, et il n'existe pas de proxy sur le réseau. 
+*  La dernière fenêtre propose un listing de plugins officiels à intégrer lors de l'installation, ainsi que les paramètres du proxy. Aucun plugin n'est à télécharger ici, et il n'existe pas de proxy sur le réseau. 
 
 Une fois ceci fait, ElasticSearch va s'installer et indiquera qu'il s'est installé avec succès. 
 Il vous sera proposé d'ouvrir ES dans le navigateur, ce qui mènera à l'url suivant : [http://localhost:9200/](http://localhost:9200/)
