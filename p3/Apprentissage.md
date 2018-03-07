@@ -10,8 +10,8 @@
 *  [Création d'un Document](#doc1)
 *  [Modification d'un Document](#doc2)
 *  [Suppression d'un Document](#doc3)
-### [Recherche](#rec)
 
+### [Recherche](#rec)
 *  [Recherche Globale et par ID](#ind1)
 *  [Recherche par Requête](#ind2)
 
