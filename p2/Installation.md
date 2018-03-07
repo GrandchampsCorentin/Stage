@@ -42,7 +42,8 @@ On peut décocher le démarrage automatique d'ElasticSearch au démarrage de Win
 *  La troisième fenêtre dispose de paramètres concernant le Cluster, le Node, les roles du Node, la mémoire allouée, ainsi que des paramètres réseaux. 
 
 Il est important de choisir un nom de Cluster ainsi qu'un nom de Node.
-Il est important de rentrer une adresse ip différente de 127.0.0.1 celle-ci étant définie par défaut. Reprenez l'IP de votre machine  Le but étant de pouvoir communiquer à travers le réseau/Cluster.
+Pour travailler en local, ne modifiez pas les paramètres réseaux.
+Pour faire communiquer les Nodes entre eux, il est néanmoins important de rentrer une adresse ip différente de 127.0.0.1(localhost) celle-ci étant définie par défaut. Reprenez l'IP de votre machine  Le but étant de pouvoir communiquer à travers le réseau/Cluster.
 
 *  La dernière fenêtre propose un listing de plugins officiels à intégrer lors de l'installation, ainsi que les paramètres du proxy. Aucun plugin n'est à télécharger ici, et il n'existe pas de proxy sur le réseau. 
 
