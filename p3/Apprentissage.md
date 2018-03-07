@@ -13,7 +13,7 @@
 
 ### [Recherche](#rec)
 *  [Recherche Globale et par ID](#ind1)
-*  [Recherche par Requête](#ind2)
+*  [Recherche par Requête](#user-content-recherche-par-requete)
 
 # Index <a id="#ind"></a>
 
