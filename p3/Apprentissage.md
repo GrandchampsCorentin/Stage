@@ -15,51 +15,51 @@
 *  [Recherche Globale et par ID](#ind1)
 *  [Recherche par Requête](#user-content-par-requête)
 
-# Index <a id="#ind"></a>
+# Index 
 
-## Créer un index <a id="#ind1"></a>
+## Créer un index
 
 *Notion abordée : 
 -> Mapping*
 
-## Modifier un index <a id="#ind2"></a>
+## Modifier un index 
 
 *Notion abordée : 
 -> Les différentes façons de modifier un index*
 
-## Supprimer un index <a id="#ind3"></a>
+## Supprimer un index
 
 *Notion abordée : 
 -> Suppression d'un index*
 
-# Documents <a id="#doc"></a>
+# Documents
 
-## Remplir un index de documents <a id="#doc1"></a>
+## Remplir un index de documents 
 
 *Notions abordées : 
 -> Insertion par ID
 -> Insertion de masse API bulk*
 
-## Modifier les documents d'un index <a id="#doc2"></a>
+## Modifier les documents d'un index 
 
 *Notions abordées :
 -> Modification par ID
 -> Modification de masse*
 
-## Supprimer les documents d'un index <a id="#doc3"></a>
+## Supprimer les documents d'un index 
 
 *Notions abordées :
 -> Suppression par l'ID
 -> Suppression de masse*
 
-# Recherche <a id="#rec"></a>
+# Recherche 
 
-## Globale et Par ID <a id="#rec1"></a>
+## Globale et Par ID
 
 Notions abordées : 
 -> Recherche API Search de base
 
-##  <a id="#rec2">Par Requête</a>
+## Par Requête
 
 Notions abordées : 
 -> Fuzyness
