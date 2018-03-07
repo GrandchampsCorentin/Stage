@@ -59,7 +59,7 @@
 Notions abordées : 
 -> Recherche API Search de base
 
-## Par Requête <a id="#rec2"></a>
+##  <a id="#rec2">Par Requête</a>
 
 Notions abordées : 
 -> Fuzyness
