@@ -38,7 +38,7 @@ GL&HF :)
 
 # Utilisation d'ElasticSearch
 
-- [I) Premiers pas](/p3/1-leDepart)
+- [I) Premiers pas](/p3/apprentissage)
 - [II) ](/p3/2-)
 - [III) ](/p3/3-)
 
