@@ -1,4 +1,4 @@
-# Installation d'ElasticSearch
+# Installation d'ElasticSearch et Configuration
 
 ## Prérequis
 
