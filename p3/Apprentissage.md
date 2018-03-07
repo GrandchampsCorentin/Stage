@@ -6,7 +6,7 @@
 *  [Modification d'un Index](#user-content-modifier-un-index)
 *  [Suppression d'un Index](#user-content-supprimer-un-index)
 
-### [Documents](#user-content-document)
+### [Documents](#user-content-documents)
 *  [Création d'un Document](#user-content-remplir-un-index-de-documents)
 *  [Modification d'un Document](#user-content-modifier-les-documents-dun-index)
 *  [Suppression d'un Document](#user-content-supprimer-les-documents-dun-index)
