@@ -34,7 +34,6 @@ GL&HF :)
 # Installation et configuration d'ElasticSearch
 
 - [Installation](/p2/Installation)
-- [Configuration](/p2/2-configES)
 - [Association à Laravel](/p2/3-laravelES)
 
 # Utilisation d'ElasticSearch
