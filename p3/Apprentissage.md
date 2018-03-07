@@ -8,8 +8,8 @@
 
 ### [Documents](#user-content-document)
 *  [Création d'un Document](#user-content-remplir-un-index-de-documents)
-*  [Modification d'un Document](#user-content-modifier-les-documents-d'un-index)
-*  [Suppression d'un Document](#user-content-supprimer-les-documents-d'un-index)
+*  [Modification d'un Document](#user-content-modifier-les-documents-dun-index)
+*  [Suppression d'un Document](#user-content-supprimer-les-documents-dun-index)
 
 ### [Recherche](#user-content-recherche)
 *  [Recherche Globale et par ID](#user-content-globale-et-par-id)
