@@ -1,18 +1,18 @@
 # Premiers pas
 
 ## Sommaire :
-### [Index](#ind)
-*  [Création d'un Index](#ind1)
-*  [Modification d'un Index](#ind2)
-*  [Suppression d'un Index](#ind3)
+### [Index](#user-content-index)
+*  [Création d'un Index](#user-content-créer-un-index)
+*  [Modification d'un Index](#user-content-modifier-un-index)
+*  [Suppression d'un Index](#user-content-supprimer-un-index)
 
-### [Documents](#doc)
-*  [Création d'un Document](#doc1)
-*  [Modification d'un Document](#doc2)
-*  [Suppression d'un Document](#doc3)
+### [Documents](#user-content-document)
+*  [Création d'un Document](#user-content-remplir-un-index-de-documents)
+*  [Modification d'un Document](#user-content-modifier-les-documents-d'un-index)
+*  [Suppression d'un Document](#user-content-supprimer-les-documents-d'un-index)
 
-### [Recherche](#rec)
-*  [Recherche Globale et par ID](#ind1)
+### [Recherche](#user-content-recherche)
+*  [Recherche Globale et par ID](#user-content-globale-et-par-id)
 *  [Recherche par Requête](#user-content-par-requête)
 
 # Index 
