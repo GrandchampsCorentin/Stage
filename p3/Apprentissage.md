@@ -96,15 +96,41 @@ Il est **impératif** de :
 *  Tout mettre en ligne. Le saut de ligne étant utilisé spécialement.
 *  Ne pas oublier le dernier saut de ligne à la fin de la dernière ligne.
 
+Le terme "create" peut être remplacé par "index". 
+
+Le premier reporte une erreur dans le cas où le document qu'il tente de créer existe déjà dans l'index.
+
+Le second s'occupe d'ajouter ou de remplacer le document si nécessaire.
+ 
+
 Il est possible d'appeler un fichier plutôt que de tout rentrer à la main dans l'interpréteur de requêtes. Mais n'ayant pas réussi à utiliser cette fonctionnalité, je ne la décrirai pas ici.
 
 Pour plus de renseignements sur l'API Bulk, jetez un oeil sur la [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html).
 
 ## Modifier les documents d'un index 
 
-*Notions abordées :
--> Modification par ID
--> Modification de masse*
+### Modification sur un document
+
+Pour modifier un document, rien de plus simple ! 
+
+[DocPOST](/uploads/7d91bdc56cd7b70ed9fd19936e3652f7/DocPOST.png)
+
+*  1 - L'url doit être au format `POST /index/type/id/_update` le "_update" appelant l'API de mise à jour
+*  2 - Il faut ajouter l'objet "doc" pour préciser quel(s) champ(s) modifier
+*  3 - La liste des champs à modifier et leur nouvelle valeur.
+
+Il existe un autre terme utilisable à la place de "doc" qui est "script" et qui permet d'implémenter des petits scripts tel qu'un compteur ou autre, les détails sont dans la [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-update.html).
+
+### Modification sur une masse de documents
+
+L'API Bulk propose d'autres actions que le "create" ou l'"index" telles que l'"update" et le "delete". 
+
+Pour faire une modification de masse, la sémantique est très proche d'un "create" : 
+`{ "update" { "_index" : "mon_index, "_type" : "_doc", "_id" : "mon_id" } }`*Ne pas oublier le saut de ligne ici*
+
+`{ "doc" : { "champs1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le saut de ligne ici*
+
+Le terme "doc" est rajouté ainsi que les accolades.
 
 ## Supprimer les documents d'un index 
 
