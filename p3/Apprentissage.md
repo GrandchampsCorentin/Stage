@@ -44,7 +44,8 @@ Pour "modifier" un Index, il faut en créer un nouveau qui correspond à ce que 
 
 Enfin, supprimer l'ancien Index. 
 
-#### Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
+**Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :**
+
 
 ![IndexREINDEX](/uploads/bb9952c216627fca5d275cb60823000f/IndexREINDEX.png)
 
