@@ -126,9 +126,10 @@ Il existe un autre terme utilisable à la place de "doc" qui est "script" et qui
 L'API Bulk propose d'autres actions que le "create" ou l'"index" telles que l'"update" et le "delete". 
 
 Pour faire une modification de masse, la sémantique est très proche d'un "create" : 
+
 `{ "update" { "_index" : "mon_index, "_type" : "_doc", "_id" : "mon_id" } }`*Ne pas oublier le saut de ligne ici*
 
-`{ "doc" : { "champs1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le saut de ligne ici*
+`{ "doc" : { "champ1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le saut de ligne ici*
 
 Le terme "doc" est rajouté ainsi que les accolades.
 
