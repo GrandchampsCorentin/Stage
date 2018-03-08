@@ -85,11 +85,7 @@ Il est **impératif** de :
 
 Suivre le schémas 
 
-`"action" 
-
-saut de ligne 
-
-"valeurs"`.
+`"action" saut de ligne "valeurs"`.
 
 Tout mettre en ligne.
 
