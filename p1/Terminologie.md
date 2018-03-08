@@ -65,6 +65,5 @@ Dans un même *Index*, il est possible de créer des relations parent/enfant ent
 
 *Ordre d'idée* : Fichier
 
-### Le Mapping
-
+# La notion de RESTful
 
