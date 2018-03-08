@@ -19,14 +19,11 @@
 
 ## Créer un index
 
-*Notion abordée : 
--> Mapping*
-
-Vocabulaire : Mapping
+**Vocabulaire :** Mapping
 
 Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
-Exemple : 
+**Exemple :** 
 
 ![IndexPUT](/uploads/328406612f6e110fe17a6559780e6c74/IndexPUT.png)
 
