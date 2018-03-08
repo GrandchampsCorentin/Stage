@@ -132,12 +132,20 @@ Pour faire une modification de masse, la sémantique est très proche d'un "crea
 `{ "doc" : { "champ1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le retour à la ligne ici*
 
 Le terme "doc" est rajouté ainsi que les accolades.
+Il faut réitérer cette sémantique autant de fois qu'il y a de documents à modifier.
 
 ## Supprimer les documents d'un index 
 
-*Notions abordées :
--> Suppression par l'ID
--> Suppression de masse*
+### Supprimer un document
+
+Toujours la même démarche que précédemment : `DELETE /index/_doc/id` permettra de supprimer n'importe quel document ciblé grâce à l'id. 
+
+### Supprimer une masse de documents
+
+Le dernier terme de l'API Bulk qui n'a pas été présenté est "delete".
+Il fonctionne comme un "create" ou un "index" sans avoir a inscrire la ligne des champs/valeurs, c'est à dire : 
+
+`{ "delete" : { "_index" : "mon_index", "_type" : "_doc", "_id" : "id_doc"} } `*Ne pas oublier le retour à la ligne ici*
 
 # Recherche 
 
