@@ -41,6 +41,7 @@ La modification d'un Index ne peut pas se faire directement.
 Pour "modifier" un Index, il faut en créer un nouveau qui correspond à ce que l'on souhaite et :
 *  Copier coller les documents de l'ancien Index vers le nouveau
 *  Ou, implémenter les documents dans le nouvel Index
+
 Enfin, supprimer l'ancien Index. 
 
 Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
