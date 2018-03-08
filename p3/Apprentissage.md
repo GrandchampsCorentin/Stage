@@ -88,13 +88,13 @@ Voici un exemple :
    2.  l'index où elle doit avoir lieu, ici `"_index" : "sandwich"`,
    3.  le type de l'index, ici `"_type" : "_doc"`,
    4.  l'id du document que cette ligne traite, ici `"_id" : "1"`.
-*  3 - Après un saut de ligne, on indique les valeurs des champs à indexer tels que `"name", "ingrédients", "origine"` etc...
+*  3 - Après un retour à la ligne, on indique les valeurs des champs à indexer tels que `"name", "ingrédients", "origine"` etc...
 
 Il est **impératif** de :
 
-*  renseigner l'action sur une ligne, sauter la ligne, renseigner les valeurs comme dans l'exemple
-*  Tout mettre en ligne. Le saut de ligne étant utilisé spécialement.
-*  Ne pas oublier le dernier saut de ligne à la fin de la dernière ligne.
+*  renseigner l'action sur une ligne, retourner à la ligne, renseigner les valeurs comme dans l'exemple
+*  Tout mettre en ligne. Le retour à la ligne étant utilisé spécialement.
+*  Ne pas oublier le dernier retour à la ligne à la fin de la dernière ligne.
 
 Le terme "create" peut être remplacé par "index". 
 
@@ -127,9 +127,9 @@ L'API Bulk propose d'autres actions que le "create" ou l'"index" telles que l'"u
 
 Pour faire une modification de masse, la sémantique est très proche d'un "create" : 
 
-`{ "update" { "_index" : "mon_index, "_type" : "_doc", "_id" : "mon_id" } }`*Ne pas oublier le saut de ligne ici*
+`{ "update" { "_index" : "mon_index, "_type" : "_doc", "_id" : "mon_id" } }`*Ne pas oublier le retour à la ligne ici*
 
-`{ "doc" : { "champ1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le saut de ligne ici*
+`{ "doc" : { "champ1" : "valeur1", "champ2" : "valeur2" } }`*Ne pas oublier le retour à la ligne ici*
 
 Le terme "doc" est rajouté ainsi que les accolades.
 
