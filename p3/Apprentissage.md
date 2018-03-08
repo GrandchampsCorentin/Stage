@@ -81,6 +81,20 @@ Voici un exemple :
    4.  l'id du document que cette ligne traite, ici `"_id" : "1"`.
 *  3 - Après un saut de ligne, on indique les valeurs des champs à indexer tels que `"name", "ingrédients", "origine"` etc...
 
+Il est **impératif** de :
+
+Suivre le schémas 
+
+`"action" 
+
+saut de ligne 
+
+"valeurs"`.
+
+Tout mettre en ligne.
+
+Ne pas oublier le dernier saut de ligne à la fin de la dernière ligne.
+
 ## Modifier les documents d'un index 
 
 *Notions abordées :
