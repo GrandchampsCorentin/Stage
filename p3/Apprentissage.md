@@ -65,6 +65,13 @@ Vous trouverez d'autres méthodes plus pointues dans la [documentation officiell
 
 ### Insertion par ID
 
+L'insertion par ID est simple, en voici un exemple : 
+
+![DocPUT](/uploads/fbc66b921385e81979f288a1257d0026/DocPUT.png)
+
+*  1 - On indique le chemin sous la forme /index/type/id en proposant un ID valide qui sera celui du nouveau document
+*  2 - On rentre les valeurs associées à leur champ
+
 ### Insertion de masse
 
 Rentrer un à un les documents dans les index peut s'avérer long. Pour éviter de devoir tout faire par l'ID il existe une API dénommée Bulk dans ElasticSearch qui permet d'envoyer un groupement de documents d'un seul coup. 
@@ -83,13 +90,13 @@ Voici un exemple :
 
 Il est **impératif** de :
 
-Suivre le schémas 
+*  renseigner l'action sur une ligne, sauter la ligne, renseigner les valeurs comme dans l'exemple
+*  Tout mettre en ligne. Le saut de ligne étant utilisé spécialement.
+*  Ne pas oublier le dernier saut de ligne à la fin de la dernière ligne.
 
-`"action" saut de ligne "valeurs"`.
+Il est possible d'appeler un fichier plutôt que de tout rentrer à la main dans l'interpréteur de requêtes. Mais n'ayant pas réussi à utiliser cette fonctionnalité, je ne la décrirai pas ici.
 
-Tout mettre en ligne.
-
-Ne pas oublier le dernier saut de ligne à la fin de la dernière ligne.
+Pour plus de renseignements sur l'API Bulk, jetez un oeil sur la [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html).
 
 ## Modifier les documents d'un index 
 
