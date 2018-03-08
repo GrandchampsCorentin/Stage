@@ -63,6 +63,24 @@ Vous trouverez d'autres méthodes plus pointues dans la [documentation officiell
 -> Insertion par ID
 -> Insertion de masse API bulk*
 
+### Insertion par ID
+
+### Insertion de masse
+
+Rentrer un à un les documents dans les index peut s'avérer long. Pour éviter de devoir tout faire par l'ID il existe une API dénommée Bulk dans ElasticSearch qui permet d'envoyer un groupement de documents d'un seul coup. 
+
+Voici un exemple :
+
+![DocBULK](/uploads/76af3435d7fb0cb8f0f00e25dff695af/DocBULK.png)
+
+*  1 - On appelle l'API Bulk avec "_bulk"
+*  2 - En une ligne on définit 
+   1.  l'action que doit faire la requête, ici `"create"` pour la création,
+   2.  l'index où elle doit avoir lieu, ici `"_index" : "sandwich"`,
+   3.  le type de l'index, ici `"_type" : "_doc"`,
+   4.  l'id du document que cette ligne traite, ici `"_id" : "1"`.
+*  3 - Après un saut de ligne, on indique les valeurs des champs à indexer tels que `"name", "ingrédients", "origine"` etc...
+
 ## Modifier les documents d'un index 
 
 *Notions abordées :
