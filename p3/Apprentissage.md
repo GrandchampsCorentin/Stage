@@ -34,6 +34,10 @@ Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
 Ce procédé est une bonne pratique à avoir, car il est possible de créer des Index sans structure construite au préalable. Si vous avez du mal à comprendre, dites vous que c'est presque la même chose que déclarer une table SQL et ses champs.
 
+Afin de voir le contenu d'un index on peut utiliser le code suivant : `GET /mon_index`.
+
+Cela renverra tout ce que "mon_index" contient.
+
 ## Modifier/Supprimer un index 
 
 La modification d'un Index ne peut pas se faire directement.
@@ -146,6 +150,8 @@ Le dernier terme de l'API Bulk qui n'a pas été présenté est "delete".
 Il fonctionne comme un "create" ou un "index" sans avoir a inscrire la ligne des champs/valeurs, c'est à dire : 
 
 `{ "delete" : { "_index" : "mon_index", "_type" : "_doc", "_id" : "id_doc"} } `*Ne pas oublier le retour à la ligne ici*
+
+Il faudra autant de ligne comme celle présentée au dessus que de documents à supprimer.
 
 # Recherche 
 
