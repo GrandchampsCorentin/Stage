@@ -44,13 +44,13 @@ Pour "modifier" un Index, il faut en créer un nouveau qui correspond à ce que 
 
 Enfin, supprimer l'ancien Index. 
 
-Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
+#### Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
 
 ![IndexREINDEX](/uploads/bb9952c216627fca5d275cb60823000f/IndexREINDEX.png)
 
-Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle]().
+Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html).
 
-Le code ci-dessous permet de supprimer un Index 
+#### Le code ci-dessous permet de supprimer un Index 
 
 ![IndexDELETE](/uploads/74b82cae725c5dddaa29e36ed88d5f72/IndexDELETE.png)
 
