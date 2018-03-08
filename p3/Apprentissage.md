@@ -3,8 +3,7 @@
 ## Sommaire :
 ### [Index](#user-content-index)
 *  [Création d'un Index](#user-content-créer-un-index)
-*  [Modification/Suppression d'un Index](#user-content-modifier/supprimer-un-index)
-*  [Suppression d'un Index](#user-content-supprimer-un-index)
+*  [Modification/Suppression d'un Index](#user-content-modifiersupprimer-un-index)
 
 ### [Documents](#user-content-documents)
 *  [Création d'un Document](#user-content-remplir-un-index-de-documents)
@@ -46,13 +45,13 @@ Enfin, supprimer l'ancien Index.
 
 Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
 
-``
+![IndexREINDEX](/uploads/bb9952c216627fca5d275cb60823000f/IndexREINDEX.png)
 
 Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle]().
 
 Le code ci-dessous permet de supprimer un Index 
 
-`DELETE mon_index`
+![IndexDELETE](/uploads/74b82cae725c5dddaa29e36ed88d5f72/IndexDELETE.png)
 
 # Documents
 
