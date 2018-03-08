@@ -35,15 +35,24 @@ Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
 Ce procédé est une bonne pratique à avoir, car il est possible de créer des Index sans structure construite au préalable. Si vous avez du mal à comprendre, dites vous que c'est presque la même chose que déclarer une table SQL et ses champs.
 
-## Modifier un index 
+## Modifier/Supprimer un index 
 
-*Notion abordée : 
--> Les différentes façons de modifier un index*
+La modification d'un Index  ne peut pas se faire.
 
-## Supprimer un index
+Pour "modifier" un Index, il faut en créer un nouveau qui correspond à ce que l'on souhaite et :
+*  Copier coller les documents de l'ancien Index vers le nouveau
+*  Ou, implémenter les documents dans le nouvel Index
+Enfin, supprimer l'ancien Index. 
 
-*Notion abordée : 
--> Suppression d'un index*
+Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :
+
+``
+
+Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle]().
+
+Le code ci-dessous permet de supprimer un Index 
+
+`DELETE mon_index`
 
 # Documents
 
