@@ -22,6 +22,22 @@
 *Notion abordée : 
 -> Mapping*
 
+Vocabulaire : Mapping
+
+Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
+
+Exemple : 
+
+![IndexPUT](/uploads/328406612f6e110fe17a6559780e6c74/IndexPUT.png)
+
+*  1 - On indique que l'on souhaite créer l'Index "sandwich" 
+*  2 - On indique que l'on souhaite façonner sa structure avec l'objet "mappings"
+*  3 - On définit le type de l'Index, qui sera toujours "_doc"
+*  4 - On définit les propriétés de l'Index
+*  5,6 - On inscrit le nom des champs, et leur type. 
+
+Ce procédé est une bonne pratique à avoir, car il est possible de créer des Index sans structure construite au préalable. Si vous avez du mal à comprendre, dites vous que c'est presque la même chose que déclarer une table SQL et ses champs.
+
 ## Modifier un index 
 
 *Notion abordée : 
