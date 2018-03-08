@@ -113,7 +113,7 @@ Pour plus de renseignements sur l'API Bulk, jetez un oeil sur la [documentation]
 
 Pour modifier un document, rien de plus simple ! 
 
-[DocPOST](/uploads/7d91bdc56cd7b70ed9fd19936e3652f7/DocPOST.png)
+![DocPOST](/uploads/7d91bdc56cd7b70ed9fd19936e3652f7/DocPOST.png)
 
 *  1 - L'url doit être au format `POST /index/type/id/_update` le "_update" appelant l'API de mise à jour
 *  2 - Il faut ajouter l'objet "doc" pour préciser quel(s) champ(s) modifier
