@@ -51,7 +51,7 @@ Enfin, supprimer l'ancien Index.
 
 Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html).
 
-#### Le code ci-dessous permet de supprimer un Index 
+**Le code ci-dessous permet de supprimer un Index**
 
 ![IndexDELETE](/uploads/74b82cae725c5dddaa29e36ed88d5f72/IndexDELETE.png)
 
