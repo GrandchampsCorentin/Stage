@@ -34,10 +34,6 @@ Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
 Ce procédé est une bonne pratique à avoir, car il est possible de créer des Index sans structure construite au préalable. Si vous avez du mal à comprendre, dites vous que c'est presque la même chose que déclarer une table SQL et ses champs.
 
-Afin de voir le contenu d'un index on peut utiliser le code suivant : `GET /mon_index`.
-
-Cela renverra tout ce que "mon_index" contient.
-
 ## Modifier/Supprimer un index 
 
 La modification d'un Index ne peut pas se faire directement.
@@ -155,12 +151,25 @@ Il faudra autant de ligne comme celle présentée au dessus que de documents à 
 
 # Recherche 
 
-## Globale et Par ID
+## Par ID
 
-Notions abordées : 
--> Recherche API Search de base
+Afin de récupérer les informations indexées dans un document spécifique, on utilise le code suivant : `GET /index/type/id`
+
+Ainsi les champs et leurs valeurs seront retournés. 
 
 ## Par Requête
+
+Pour faire des recherches par requête, quelques subtilités s'imposent. 
+
+En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on envoit en dessous des liens. Pour contourner la chose, ElasticSearch à développé une API, Search, qui permet de faire de la lecture de données à travers le terme POST, qui accepte les bodys. 
+
+*  Récupération de toutes les données du cluster :
+
+![AllGET](/uploads/d0b39d47fb4536e6643b077727418d01/AllGET.png)
+
+*  1 - Afin de faire des recherches par requête, il est obligatoire d'être en POST **et** d'utiliser "_search" de l'API Search
+*  2 - On indique que l'on souhaite faire une requête.
+*  3 - "match_all" permet de récupérer tout les documents et leurs champs/valeurs du cluster
 
 Notions abordées : 
 -> Fuzyness
