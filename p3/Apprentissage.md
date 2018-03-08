@@ -3,7 +3,7 @@
 ## Sommaire :
 ### [Index](#user-content-index)
 *  [Création d'un Index](#user-content-créer-un-index)
-*  [Modification d'un Index](#user-content-modifier-un-index)
+*  [Modification/Suppression d'un Index](#user-content-modifier/supprimer-un-index)
 *  [Suppression d'un Index](#user-content-supprimer-un-index)
 
 ### [Documents](#user-content-documents)
