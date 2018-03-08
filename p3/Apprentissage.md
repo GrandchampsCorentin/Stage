@@ -72,6 +72,8 @@ L'insertion par ID est simple, en voici un exemple :
 *  1 - On indique le chemin sous la forme /index/type/id en proposant un ID valide qui sera celui du nouveau document
 *  2 - On rentre les valeurs associées à leur champ
 
+Il est possible de faire une insertion sans préciser l'id (/index/type/), un id sera automatiquement associé au document, mais il sera long, peu significatif, et compliqué à utiliser (ex : "6a8ca01c-7896-48e9-81cc-9f70661fcb32")
+
 ### Insertion de masse
 
 Rentrer un à un les documents dans les index peut s'avérer long. Pour éviter de devoir tout faire par l'ID il existe une API dénommée Bulk dans ElasticSearch qui permet d'envoyer un groupement de documents d'un seul coup. 
