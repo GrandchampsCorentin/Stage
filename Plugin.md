@@ -27,4 +27,4 @@ Le plugin est maintenant installé et fonctionnel.
 
 Tous les créateurs de plugins mettront les commandes pour télécharger et installer leurs package donc je ne vais pas m'échiner à faire un quelconque tutoriel ici. 
 
-Je redirige vers la [documentation spécifique](https://www.elastic.co/guide/en/elasticsearch/plugins/current/installation.html) qui le fait très bien.
+Je redirige vers la [documentation spécifique](https://www.elastic.co/guide/en/elasticsearch/plugins/current/installation.html) qui se charge aussi très bien de dire comment faire.
