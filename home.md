@@ -39,7 +39,7 @@ GL&HF :)
 # Utilisation d'ElasticSearch
 
 - [I) Premiers pas](/p3/apprentissage)
-- [II) ](/p3/2-)
+- [II) La recherche avec ES](/p3/recherche)
 - [III) ](/p3/3-)
 
 # Laravel Scout
