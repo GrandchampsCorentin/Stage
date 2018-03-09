@@ -65,5 +65,30 @@ Dans un même *Index*, il est possible de créer des relations parent/enfant ent
 
 *Ordre d'idée* : Fichier
 
-# La notion de RESTful
+# Le RESTful
 
+Ceci n'est qu'un simple rappel. Pour plus d'informations, Google est un bon allié. 
+
+Le RESTful est une architecture, utilisée pour les APIs web.
+
+Les appels d'URL se font avec des termes ayant la même fonction que les termes SQL select, update, delete...
+
+Voici une liste non exhaustive : 
+*  GET - Permet de récupérer/sélectionner des données sans modifier quoi que ce soit
+*  POST - Permet de créer
+*  PUT - Permet de mettre à jour ou de créer si l'élément est inexistant
+*  DELETE - Permet de supprimer
+
+
+Quelques messages d'erreur courant et leur signification :
+*  200 OK Tout s'est bien passé
+*  201 Created La création de la ressource s'est bien passée (il n’est pas rare que les attributs de la nouvelle ressource soient aussi renvoyées dans la réponse. Dans ce cas, l’URL de cette ressource nouvellement créée est ajouté via un header Location )
+*  204 No content Même principe que pour la 201, sauf que cette fois-ci, le contenu de la ressource nouvellement créée ou modifiée n'est pas renvoyée en réponse
+*  304 Not modified Le contenu n'a pas été modifié depuis la dernière fois qu'elle a été mise en cache
+*  400 Bad request La demande n'a pas pu être traitée correctement
+*  401 Unauthorized L'authentification a échoué
+*  403 Forbidden L'accès à cette ressource n'est pas autorisé
+*  404 Not found La ressource n'existe pas
+*  405 Method not allowed La méthode HTTP utilisée n'est pas traitable par l'API
+*  406 Not acceptable L’API est dans l’incapacité de fournir le format demandé par les en têtes Accept. Par exemple, le client demande un format (XML par exemple) et l'API n'est pas prévue pour générer du XML
+*  500 Server error Le serveur a rencontré un problème.
