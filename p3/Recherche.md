@@ -31,5 +31,3 @@ Notions abordées :
 -> Analyzer
 -> Aggregation
 etc etc
-
-# Redémarrer ElasticSearch
