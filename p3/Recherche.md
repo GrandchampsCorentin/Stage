@@ -16,7 +16,7 @@ Pour faire des recherches par requête, quelques subtilités s'imposent.
 
 En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on envoit en dessous des liens. Pour contourner la chose, ElasticSearch à développé une API, Search, qui permet de faire de la lecture de données à travers le terme POST, qui accepte les bodys. 
 
-*  Récupération de toutes les données du cluster :
+###  Récupération de toutes les données du cluster :
 
 ![AllGET](/uploads/d0b39d47fb4536e6643b077727418d01/AllGET.png)
 
