@@ -79,6 +79,7 @@ Voici une liste non exhaustive :
 *  PUT - Permet de mettre à jour ou de créer si l'élément est inexistant
 *  DELETE - Permet de supprimer
 
+Un exemple : `GET http://localhost:9200/index/type/id_element` retournera les informations sur l'élément correspondant à l'id  au format JSON.
 
 Quelques messages d'erreur courant et leur signification :
 *  200 OK Tout s'est bien passé
