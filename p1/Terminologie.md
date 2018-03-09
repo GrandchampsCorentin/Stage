@@ -73,7 +73,7 @@ Le RESTful est une architecture, utilisée pour les APIs web.
 
 Les appels d'URL se font avec des termes ayant la même fonction que les termes SQL select, update, delete...
 
-Voici une liste non exhaustive : 
+Voici une liste des termes les plus utilisés et surtout non exhaustive : 
 *  GET - Permet de récupérer/sélectionner des données sans modifier quoi que ce soit
 *  POST - Permet de créer
 *  PUT - Permet de mettre à jour ou de créer si l'élément est inexistant
