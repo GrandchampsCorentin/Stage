@@ -10,7 +10,7 @@ Afin de récupérer les informations indexées dans un document spécifique, on 
 
 Ainsi les champs et leurs valeurs seront retournés. 
 
-## Par Requête
+## Par Requête - Termes
 
 Pour faire des recherches par requête, quelques subtilités s'imposent. 
 
@@ -34,6 +34,7 @@ On recherche tous les documents dont un ou plusieurs champs possèdent exactemen
 *  2 - On fait une recherche donc on ajoute `query`
 *  3 - `match` permet de faire une recherche par équivalence. La/les valeurs(s) et le/les champs entrés doivent être identiques dans l'index visé pour renvoyer un résultat. 
 
+## Par Requête - Chaines de caractères
 
 Notions abordées : 
 -> Fuzyness
