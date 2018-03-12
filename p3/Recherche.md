@@ -24,7 +24,16 @@ En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on en
 *  2 - On indique que l'on souhaite faire une requête.
 *  3 - "match_all" permet de récupérer tout les documents et leurs champs/valeurs du cluster
 
-### Récupération d'un 
+### Récupération par équivalence
+
+On recherche tous les documents dont un ou plusieurs champs possèdent exactement telles valeurs.
+
+![QueryMATCH](/uploads/3206f46a74c2125ad23e9ce5c54df55c/QueryMATCH.PNG)
+
+*  1 - On spécifie l'index, le type de l'index, et le terme `_search` obligatoire pour de la recherche en POST
+*  2 - On fait une recherche donc on ajoute `query`
+*  3 - `match` permet de faire une recherche par équivalence. La/les valeurs(s) et le/les champs entrés doivent être identiques dans l'index visé pour renvoyer un résultat. 
+
 
 Notions abordées : 
 -> Fuzyness
