@@ -24,6 +24,8 @@ En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on en
 *  2 - On indique que l'on souhaite faire une requête.
 *  3 - "match_all" permet de récupérer tout les documents et leurs champs/valeurs du cluster
 
+### Récupération d'un 
+
 Notions abordées : 
 -> Fuzyness
 -> Wildcard
