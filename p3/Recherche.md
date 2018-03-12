@@ -20,7 +20,7 @@ En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on en
 
 On recherche tous les documents dont un ou plusieurs champs possèdent exactement telles valeurs.
 
-![TermEqui](/uploads/08b5a4959cda3b48c130e8a26c2f78f8/TermEqui.png)
+![TermEqui](/uploads/fa407e6b69ce5e68aafd8e1671ad5c1f/TermEqui.png)
 
 *  1 - On spécifie le terme `_search` obligatoire pour de la recherche en POST
 *  2 - On fait une recherche donc on ajoute `query`
