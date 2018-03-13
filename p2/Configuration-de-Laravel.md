@@ -72,4 +72,46 @@ class MyIndexConfigurator extends IndexConfigurator
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
 
 **Enfin**, la création d'un Index qui suit le paramétrage que l'on vient de configurer ce fait ainsi :  
-> `php artisan elastic:create-index App\MyIndexConfigurator`
+> `php artisan elastic:create-index App\MyIndexConfigurator`  
+
+# Modèles liés à Elasticsearch
+
+Afin de réaliser des requêtes de recherche à travers Elasticsearch, il faut créer un/des modèles permettant de le faire :  
+> `php artisan make:searchable-model MyModel --index-configurator=MyIndexConfigurator`
+
+Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Laravel et ressemble à ça :  
+```php
+<?php
+
+namespace App;
+
+use ScoutElastic\Searchable;
+use Illuminate\Database\Eloquent\Model;
+
+class MyModel extends Model
+{
+    use Searchable;
+
+    protected $indexConfigurator = MyIndexConfigurator::class;
+
+    protected $searchRules = [
+        //
+    ];
+
+    // Here you can specify a mapping for a model fields.
+    protected $mapping = [
+        'properties' => [
+            'text' => [
+                'type' => 'text',
+                'fields' => [
+                    'raw' => [
+                        'type' => 'text',
+                        'index' => 'not_analyzed',
+                    ]
+                ]
+            ],
+        ]
+    ];
+}
+```
+
