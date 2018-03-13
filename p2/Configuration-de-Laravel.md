@@ -98,7 +98,8 @@ class MyModel extends Model
         //
     ];
 
-    // Here you can specify a mapping for a model fields.
+    // Il es possible ici de définir au préalable un mapping pour les champs du modèle.
+    // Ceci n'est qu'un exemple de mapping et il est nécessaire de l'adapter à vos besoins.
     protected $mapping = [
         'properties' => [
             'text' => [
