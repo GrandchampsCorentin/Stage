@@ -38,8 +38,7 @@ Grâce à la classe Index configurator, il sera possible de gérer le paramétra
 La ligne suivante permet de créer un nouvel Index configurator :  
 > `php artisan make:index-configurator MyIndexConfigurator`
 
-Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossier `app/` du projet Laravel.
-
+Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossier `app/` du projet Laravel, qui ressemble à ceci :  
 ```php
 <?php
 
@@ -52,8 +51,11 @@ class MyIndexConfigurator extends IndexConfigurator
 {
     use Migratable;
 
+    // Variable optionnelle qui reconfigure le nom par défaut de l'Index configurator.
     protected $name = 'produits_nacel';
 
+    // Il est possible de paramétrer un analyzer pour les recherches. 
+    // Il est obligatoire qu'il soit ici et non ailleurs.
     protected $settings = [
         'analysis' => [
             'analyzer' => 'french_light',
@@ -67,3 +69,7 @@ class MyIndexConfigurator extends IndexConfigurator
     ];
 }
 ```
+Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
+
+**Enfin**, la création d'un Index qui suit le paramétrage que l'on vient de configurer ce fait ainsi :  
+> `php artisan elastic:create-index App\MyIndexConfigurator`
