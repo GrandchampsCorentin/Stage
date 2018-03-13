@@ -38,8 +38,30 @@ Grâce à la classe Index configurator, il sera possible de gérer le paramétra
 La ligne suivante permet de créer un nouvel Index configurator :  
 > `php artisan make:index-configurator MyIndexConfigurator`
 
-`
+Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossier `app/` du projet Laravel.
 
-test
+`<?php
 
-`
+namespace App;
+
+use ScoutElastic\IndexConfigurator;
+use ScoutElastic\Migratable;
+
+class MyIndexConfigurator extends IndexConfigurator
+{
+    use Migratable;
+
+    protected $name = 'produits_nacel';
+
+    protected $settings = [
+        'analysis' => [
+            'analyzer' => 'french_light',
+            'fields' => [
+                'stemmed' => [
+                    'type' => 'text',
+                    'analyzer' => 'french_heavy',
+                ],
+            ],
+        ],
+    ];
+}`
