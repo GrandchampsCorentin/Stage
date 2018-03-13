@@ -9,20 +9,20 @@
 
 # ElasticSearch : Concept et Jargon
 
-- [Concept](/p1/Concept)
-- [Jargon](/p1/Terminologie)
+- [Concept](/p1/Concept) A revoir ?
+- [Jargon](/p1/Terminologie) En construction
 
 
 # Installation et configuration d'ElasticSearch
 
-- [Installation](/p2/Installation)
-- [Installer un plugin](/p2/Plugin)
-- [Association à Laravel](/p2/Configuration-de-Laravel)
+- [Installation](/p2/Installation) OK
+- [Installer un plugin](/p2/Plugin) OK
+- [Association à Laravel](/p2/Configuration-de-Laravel) OK
 
 # Utilisation d'ElasticSearch
 
-- [I) Index et Documents](/p3/apprentissage)
-- [II) La recherche avec ES](/p3/Recherche)
-- [III) Requêtes dans Laravel](p3/Requêtes-dans-Laravel)
+- [I) Index et Documents](/p3/apprentissage) En construction
+- [II) La recherche avec ES](/p3/Recherche) En construction
+- [III) Requêtes dans Laravel](p3/Requêtes-dans-Laravel) OK ?
 
 
