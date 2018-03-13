@@ -39,5 +39,7 @@ La ligne suivante permet de créer un nouvel Index configurator :
 > `php artisan make:index-configurator MyIndexConfigurator`
 
 `
+
 test
+
 `
