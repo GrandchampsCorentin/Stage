@@ -192,7 +192,7 @@ Quand tout est prêt, et une fois les changements réalisés dans le mapping du 
 
 # Debug
 
-Il existe deux méthodes qui peuvent aider lors de l'analyse de résultats suite à des recherches :
+Mise à part le `->get()` qui ne retourne que les documents concernés par la requête, il existe deux méthodes qui peuvent aider lors de l'analyse de résultats suite à des recherches :
 
 `explain`  
 ```php
@@ -200,9 +200,14 @@ App\MyModel::search('Brazil')
     ->explain();
 ```
 
+Cette méthode permet d'avoir des informations supplémentaires telles que le **score** des documents.
+
 `profile`  
 ```php
 App\MyModel::search('Brazil')
     ->profile();
 ```  
-Les deux méthodes renvoient des données brutes venant d'Elasticsearch.
+
+Cette méthode permet d'avoir, en plus des informations données par le `->explain()`, des informations inhérentes aux *shards* touchés par la recherche.
+
+Les deux méthodes renvoient des données brutes venant d'Elasticsearch (format JSON).
