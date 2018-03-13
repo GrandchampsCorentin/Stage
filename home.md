@@ -28,8 +28,8 @@ GL&HF :)
 
 # ElasticSearch : Concept et Jargon
 
-- [Concept](/p1/A)Concept)
-- [Jargon](/p1/B)Terminologie)
+- [Concept](/p1/Concept)
+- [Jargon](/p1/Terminologie)
 
 # Installation et configuration d'ElasticSearch
 
