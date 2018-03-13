@@ -18,3 +18,14 @@ Afin de configurer le package, il est nécessaire de publier des paramètres ave
 *  `php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"`
 *  `php artisan vendor:publish --provider="ScoutElastic\ScoutElasticServiceProvider"`
 
+Ensuite, dans le fichier `config/scout.php`, modifier le code suivant : 
+*  `'driver' => env('SCOUT_DRIVER', 'algolia'),`
+En
+*  `'driver' => env('SCOUT_DRIVER', '**elastic**'),`
+Then, set the driver setting to elastic in the config/scout.php file and configure the driver itself in the config/scout_elastic.php file. The available options are:
+
+Option	Description
+client	A setting hash to build Elasticsearch client. More information you can find here. By default the host is set to localhost:9200.
+update_mapping	The option that specifies whether to update a mapping automatically or not. By default it is set to true.
+indexer	Set to single for the single document indexing and to bulk for the bulk document indexing. By default is set to single.
+Note, that if you use the bulk document indexing you'll probably want to change the chunk size, you can do that in the config/scout.php file.
