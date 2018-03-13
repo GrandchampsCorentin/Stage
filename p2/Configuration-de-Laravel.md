@@ -23,11 +23,11 @@ Ensuite, dans le fichier `config/scout.php`, modifier le code suivant :
 
 Il est possible de configurer le driver dans le fichier `config/scout_elastic.php` 
 
-The available options are:
+Les options disponibles sont :
 
 | Option	| Description |
-| --------------| ------------|
-|client	| A setting hash to build Elasticsearch client. More information you can find here. By -default the host is set to localhost:9200. |
-|update_mapping	|The option that specifies whether to update a mapping automatically or not. By default it is set to true. |
+| :-----------: | :---------: |
+|client	| Une des configurations pour paramétrer Elasticsarch. Plus d'informations [ici](https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/_configuration.html#_building_the_client_from_a_configuration_hash). Par -default l'hôte est déterminé comme suit : localhost:9200. |
+|update_mapping	|Une option qui permet de définir si on automatise la mise à jour des mappings. Par défaut c'est configuré sur `true`|
 |indexer	|Set to single for the single document indexing and to bulk for the bulk document indexing. By default is set to single. |
 Note, that if you use the bulk document indexing you'll probably want to change the chunk size, you can do that in the config/scout.php file.
