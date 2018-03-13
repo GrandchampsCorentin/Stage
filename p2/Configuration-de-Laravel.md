@@ -130,14 +130,14 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 
 | Command	| Arguments	| Description |  
 | :-----------: | :-----------: | :---------: |  
-| make:index-configurator	| name - The name of the class	| Creates a new Elasticsearch index configurator. |  
-| make:searchable-model	| name - The name of the class	| Creates a new searchable model. |  
-| make:search-rule	| name - The name of the class	| Creates a new search rule. |  
-| elastic:create-index	| index-configurator - The index configurator class	| Creates an Elasticsearch index. |  
-| elastic:update-index	| index-configurator - The index configurator class	| Updates settings and mappings of an Elasticsearch index. |  
-| elastic:drop-index	| index-configurator - The index configurator class	| Drops an Elasticsearch index.|  
-| elastic:update-mapping	| model - The model class	| Updates a model mapping. |  
-| elastic:migrate	| model - The model class, target-index - The index name to migrate	|  Migrates model to another index. |  
+| make:index-configurator	| `name` - The name of the class	| Créé un nouvel Index Configurator. |  
+| make:searchable-model	| `name` - The name of the class	| Créé un nouveau modèle lié à Elasticsearch. |  
+| make:search-rule	| `name` - The name of the class	| Créé une nouvelle règle de recherche. |  
+| elastic:create-index	| `index-configurator` - The index configurator class	| Créé un Index Elasticsearch. |  
+| elastic:update-index	| `index-configurator` - The index configurator class	| Met à jour les paramètres de configuration et le mapping d'un index Elasticsearch. |  
+| elastic:drop-index	| `index-configurator` - The index configurator class	| Supprime un Index Elasticsearch.|  
+| elastic:update-mapping	| `model` - The model class	| Met à jour le mapping d'un modèle. |  
+| elastic:migrate	| `model` - The model class, `target-index` - The index name to migrate	|  Migre un modèle vers un autre index. |  
 
 
 For detailed description and all available options run php artisan help [command] in the command line.
