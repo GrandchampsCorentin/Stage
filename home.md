@@ -40,7 +40,7 @@ GL&HF :)
 
 # Utilisation d'ElasticSearch
 
-- [I) Premiers pas](/p3/apprentissage)
+- [I) Index et Documents](/p3/apprentissage)
 - [II) La recherche avec ES](/p3/Recherche)
 - [III) Requêtes dans Laravel](p3/Requêtes-dans-Laravel)
 
