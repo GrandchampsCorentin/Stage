@@ -16,13 +16,13 @@
 # Installation et configuration d'ElasticSearch
 
 - [Installation](../p2/Installation) OK
-- [Installer un plugin]..(/p2/Plugin) OK
+- [Installer un plugin](../p2/Plugin) OK
 - [Association à Laravel](../p2/Configuration-de-Laravel) OK
 
 # Utilisation d'ElasticSearch
 
 - [I) Index et Documents](../p3/apprentissage) En construction
-- [II) La recherche avec ES]../p3/Recherche) En construction
+- [II) La recherche avec ES](../p3/Recherche) En construction
 - [III) Requêtes dans Laravel](../p3/Requêtes-dans-Laravel) OK ?
 
 
