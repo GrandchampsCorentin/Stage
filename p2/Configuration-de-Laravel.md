@@ -98,7 +98,7 @@ class MyModel extends Model
         //
     ];
 
-    // Il es possible ici de définir au préalable un mapping pour les champs du modèle.
+    // Il est possible ici de définir au préalable un mapping pour les champs du modèle.
     // Ceci n'est qu'un exemple de mapping et il est nécessaire de l'adapter à vos besoins.
     protected $mapping = [
         'properties' => [
@@ -116,3 +116,25 @@ class MyModel extends Model
 }
 ```
 
+Chaque modèle représente un type Elasticsearch (même si les types sont voués à disparaitre, pour le moment cela fonctionne comme cela). Par défaut, un type correspond à une table. 
+D'autres options sont proposées dans la [documentation de Scout](https://github.com/babenkoivan/scout-elasticsearch-driver/blob/master/README.md#search-rules).
+
+La dernière option importante est la propriété `$searchRules`. Elle permet la mise en place d'algorithmes de recherche pour un modèle. Les détails seront donnés dans la section [Règles de recherche]().
+
+Après avoir configuré un mapping pour un modèle, on peut le mettre à jour :  
+> `php artisan elastic:update-mapping App\MyModel`
+
+# Liste des commandes sur console 
+
+Toutes les commandes "artisan" sont listées ci-dessous :  
+| Command	| Arguments	| Description|
+| :-----------: | :-----------: | :-----------: |
+|make:index-configurator	|name - The name of the class	|Creates a new Elasticsearch index configurator.|
+|make:searchable-model	|name - The name of the class	|Creates a new searchable model.|
+|make:search-rule	|name - The name of the class	|Creates a new search rule.|
+|elastic:create-index	|index-configurator - The index configurator class	|Creates an Elasticsearch index.|
+|elastic:update-index	|index-configurator - The index configurator class	|Updates settings and mappings of an Elasticsearch index.|
+|elastic:drop-index	|index-configurator - The index configurator class	|Drops an Elasticsearch index.|
+|elastic:update-mapping	|model - The model class	|Updates a model mapping.|
+|elastic:migrate	|model - The model class, target-index - The index name to migrate	|Migrates model to another index.|
+For detailed description and all available options run php artisan help [command] in the command line.
