@@ -15,10 +15,11 @@ L'installation du package va se faire.
 # Configuration du package
 
 Afin de configurer le package, il est nécessaire de publier des paramètres avec les commandes suivantes : 
-*  `php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"`
-*  `php artisan vendor:publish --provider="ScoutElastic\ScoutElasticServiceProvider"`
+>  `php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"`
+>  `php artisan vendor:publish --provider="ScoutElastic\ScoutElasticServiceProvider"`
 
-Ensuite, dans le fichier `config/scout.php`, modifier le code suivant : `'driver' => env('SCOUT_DRIVER', 'algolia'),`
+Ensuite, dans le fichier `config/scout.php`, modifier le code suivant : 
+`'driver' => env('SCOUT_DRIVER', 'algolia'),`
 
 En `'driver' => env('SCOUT_DRIVER', 'elastic'),`
 Then, set the driver setting to elastic in the config/scout.php file and configure the driver itself in the config/scout_elastic.php file. The available options are:
