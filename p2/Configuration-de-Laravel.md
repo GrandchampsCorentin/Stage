@@ -15,7 +15,7 @@ L'installation du package va se faire.
 # Configuration du package
 
 Afin de configurer le package, il est nécessaire de publier des paramètres avec les commandes suivantes : 
->  `php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"`
+>  `php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"`  
 >  `php artisan vendor:publish --provider="ScoutElastic\ScoutElasticServiceProvider"`
 
 Ensuite, dans le fichier `config/scout.php`, modifier le code suivant : 
