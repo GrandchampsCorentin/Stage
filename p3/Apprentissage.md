@@ -20,7 +20,7 @@ Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
 **Exemple :** 
 
-![IndexPUT](images/IndexPUT.png)
+![IndexPUT](../images/IndexPUT.png)
 
 *  1 - On indique que l'on souhaite créer l'Index "sandwich" 
 *  2 - On indique que l'on souhaite façonner sa structure avec l'objet "mappings"
@@ -43,13 +43,13 @@ Enfin, supprimer l'ancien Index.
 **Le code le plus basique pour Copier/Coller des documents d'un Index à un autre est le suivant :**
 
 
-![IndexREINDEX](images/IndexREINDEX.png)
+![IndexREINDEX](../images/IndexREINDEX.png)
 
 Vous trouverez d'autres méthodes plus pointues dans la [documentation officielle](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html).
 
 **Le code ci-dessous permet de supprimer un Index**
 
-![IndexDELETE](images/IndexDELETE.png)
+![IndexDELETE](../images/IndexDELETE.png)
 
 # Documents
 
@@ -63,7 +63,7 @@ Vous trouverez d'autres méthodes plus pointues dans la [documentation officiell
 
 L'insertion par ID est simple, en voici un exemple : 
 
-![DocPUT](images/DocPUT.png)
+![DocPUT](../images/DocPUT.png)
 
 *  1 - On indique le chemin sous la forme /index/type/id en proposant un ID valide qui sera celui du nouveau document
 *  2 - On rentre les valeurs associées à leur champ
@@ -76,7 +76,7 @@ Rentrer un à un les documents dans les index peut s'avérer long. Pour éviter 
 
 Voici un exemple :
 
-![DocBULK](images/DocBULK.png)
+![DocBULK](../images/DocBULK.png)
 
 *  1 - On appelle l'API Bulk avec "_bulk"
 *  2 - En une ligne on définit 
@@ -109,7 +109,7 @@ Pour plus de renseignements sur l'API Bulk, jetez un oeil sur la [documentation]
 
 Pour modifier un document, rien de plus simple ! 
 
-![DocPOST](images/DocPOST.png)
+![DocPOST](../images/DocPOST.png)
 
 *  1 - L'url doit être au format `POST /index/type/id/_update` le "_update" appelant l'API de mise à jour
 *  2 - Il faut ajouter l'objet "doc" pour préciser quel(s) champ(s) modifier
