@@ -25,4 +25,4 @@
 - [II) La recherche avec ES](/p3/Recherche)
 - [III) Requêtes dans Laravel](p3/Requêtes-dans-Laravel)
 
-# Laravel Scout
+
