@@ -42,6 +42,6 @@ GL&HF :)
 
 - [I) Premiers pas](/p3/apprentissage)
 - [II) La recherche avec ES](/p3/Recherche)
-- [III) ](/p3/Z)
+- [III) Requêtes dans Laravel](p3/Requêtes-dans-Laravel)
 
 # Laravel Scout
