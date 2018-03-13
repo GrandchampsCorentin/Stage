@@ -127,8 +127,8 @@ Après avoir configuré un mapping pour un modèle, on peut le mettre à jour :
 # Liste des commandes sur console 
 
 Toutes les commandes "artisan" sont listées ci-dessous :  
-| Command	| Arguments	| Description|
-| :-----------: | :-----------: | :-----------: |
+| Command	| Arguments	| Description |
+| :-----------: | :-----------: | :---------: |
 |make:index-configurator	|name - The name of the class	|Creates a new Elasticsearch index configurator.|
 |make:searchable-model	|name - The name of the class	|Creates a new searchable model.|
 |make:search-rule	|name - The name of the class	|Creates a new search rule.|
@@ -137,4 +137,6 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 |elastic:drop-index	|index-configurator - The index configurator class	|Drops an Elasticsearch index.|
 |elastic:update-mapping	|model - The model class	|Updates a model mapping.|
 |elastic:migrate	|model - The model class, target-index - The index name to migrate	|Migrates model to another index.|
+
+
 For detailed description and all available options run php artisan help [command] in the command line.
