@@ -31,5 +31,13 @@ Les options disponibles sont :
 |update_mapping	|Une option qui permet de définir si on automatise la mise à jour des mappings. Par défaut c'est configuré sur `true`|
 |indexer	|Configuré `single` pour avoir une indexation document par document ou `bulk` pour indexer un wagon de documents avec la méthode *bulk*. Par défaut, c'est configuré sur `single`.|
 
+# Index configurator
 
+Grâce à la classe Index configurator, il sera possible de gérer le paramétrage des Index.
 
+La ligne suivante permet de créer un nouvel Index configurator :  
+> `php artisan make:index-configurator MyIndexConfigurator`
+
+`
+test
+`
