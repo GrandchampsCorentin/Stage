@@ -140,4 +140,4 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 | `elastic:migrate`	| `model` - The model class, `target-index` - The index name to migrate	|  Migre un modèle vers un autre index. |  
 
 
-For detailed description and all available options run php artisan help [command] in the command line.
+Pour une description détaillées, entrer cette ligne de commande avec la commande qui vous intéresse : `php artisan help [command]`
