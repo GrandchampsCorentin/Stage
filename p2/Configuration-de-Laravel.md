@@ -40,7 +40,8 @@ La ligne suivante permet de créer un nouvel Index configurator :
 
 Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossier `app/` du projet Laravel.
 
-`<?php
+```php
+<?php
 
 namespace App;
 
@@ -64,4 +65,5 @@ class MyIndexConfigurator extends IndexConfigurator
             ],
         ],
     ];
-}`
+}
+```
