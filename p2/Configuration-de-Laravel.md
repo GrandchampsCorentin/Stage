@@ -21,7 +21,9 @@ Afin de configurer le package, il est nécessaire de publier des paramètres ave
 Ensuite, dans le fichier `config/scout.php`, modifier le code suivant :  
 > `'driver' => env('SCOUT_DRIVER', 'algolia'),` en `'driver' => env('SCOUT_DRIVER', 'elastic'),`
 
-Then, set the driver setting to elastic in the config/scout.php file and configure the driver itself in the config/scout_elastic.php file. The available options are:
+Il est possible de configurer le driver dans le fichier `config/scout_elastic.php` 
+
+The available options are:
 
 Option	Description
 client	A setting hash to build Elasticsearch client. More information you can find here. By default the host is set to localhost:9200.
