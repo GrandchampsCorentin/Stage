@@ -1,4 +1,4 @@
-# Usage
+# Utilitaire
 
 Une fois créés :
 * un Index configurator
@@ -67,7 +67,7 @@ App\MyModel::searchRaw([
 ```
 Cette requête va renvoyer une réponse brute (raw response).
 
-# Règles de recherche
+# Règles de recherche / SearchRule
 
 Une règle de recherche est une classe qui décrit comment une requête de recherche va être exécutée.  
 La commande ci-dessous permet de créer une telle classe : 
