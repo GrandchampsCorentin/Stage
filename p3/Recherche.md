@@ -20,7 +20,7 @@ En RESTful, le GET ne peut pas avoir de body, le body étant le JSON que l'on en
 
 On recherche tous les documents dont un ou plusieurs champs possèdent exactement telles valeurs.
 
-![TermEqui](/image/TermEqui.png)
+![TermEqui](images/TermEqui.png)
 
 *  1 - On spécifie le terme `_search` obligatoire pour de la recherche en POST
 *  2 - On fait une recherche donc on ajoute `query`
@@ -31,7 +31,7 @@ On recherche tous les documents dont un ou plusieurs champs possèdent exactemen
 
 ###  Récupération de toutes les données du cluster :
 
-![AllGET](/image/AllGET.png)
+![AllGET](images/AllGET.png)
 
 *  1 - Afin de faire des recherches par requête, il est obligatoire d'être en POST **et** d'utiliser "_search" de l'API Search
 *  2 - On indique que l'on souhaite faire une requête.

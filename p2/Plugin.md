@@ -13,11 +13,11 @@ Le chemin du dossier des plugins à partir du dossier "Home" ou "Elasticsearch" 
 Le plugin est maintenant bien positionné, il faut redémarrer le Node.
 Tapez "Services" dans le menu Démarrer de Windows :
 
-![services](/image/services.png)
+![services](images/services.png)
 
 Une fenêtre va s'ouvrir, et il faudra chercher le service "Elasticsearch" :
 
-![fenService](/image/fenService.PNG)
+![fenService](images/fenService.PNG)
 
 Clic droit - Redémarrer.
 
