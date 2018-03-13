@@ -132,7 +132,7 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 | :-----------: | :-----------: | :---------: |  
 | `make:index-configurator`	| `name` - The name of the class	| Créé un nouvel Index Configurator. |  
 | `make:searchable-model`	| `name` - The name of the class	| Créé un nouveau modèle lié à Elasticsearch. |  
-| make:search-rule	| `name` - The name of the class	| Créé une nouvelle règle de recherche. |  
+| `make:search-rule`	| `name` - The name of the class	| Créé une nouvelle règle de recherche. |  
 | `elastic:create-index`	| `index-configurator` - The index configurator class	| Créé un Index Elasticsearch. |  
 | `elastic:update-index`	| `index-configurator` - The index configurator class	| Met à jour les paramètres de configuration et le mapping d'un index Elasticsearch. |  
 | `elastic:drop-index`	| `index-configurator` - The index configurator class	| Supprime un Index Elasticsearch.|  
