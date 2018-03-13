@@ -1,4 +1,4 @@
-# Premiers pas
+# Premiers pas (Hors Laravel)
 
 ## Sommaire :
 ### [Index](#user-content-index)
