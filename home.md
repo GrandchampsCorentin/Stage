@@ -45,4 +45,4 @@ GL&HF :)
 - [III) ](/p3/Z)
 
 # Laravel Scout
-![test](/images/services.png)
+![test](/image/services.png)
