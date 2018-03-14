@@ -92,6 +92,8 @@ L'index prendra soit le nom de sa classe (en enlevant "IndexConfigurator") soit 
 Afin de réaliser des requêtes de recherche à travers Elasticsearch, il faut créer un/des modèles permettant de le faire :  
 > `php artisan make:searchable-model MyModel --index-configurator=MyIndexConfigurator`
 
+**Remarque** : Un modèle est un équivalent du type. Sauf qu'ici particulièrement, on ne peut l'appeler "_doc" car le nom du modèle est important pour plusieurs traitements décris plus loin. Lors d'un appel URL, on utilisera donc `index/modèle/id` tout comme on le faisait avec  `index/type/id` avec type = "_doc". 
+
 Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Laravel.  
 
 Un modèle ressemble à ça :  
@@ -170,7 +172,7 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 | `scout:import` | `model` - La classe modèle | Indexe les données de la table SQL dont le nom est identique au nom du modèle utilisé. |
 
 
-Pour une description détaillées, entrer cette ligne de commande avec la commande qui vous intéresse : `php artisan help [command]`
+Pour une description détaillées, entrer cette ligne de commande avec la commande qui vous intéresse : `php artisan help [command]` **EXISTE MAIS NE FONCTIONNE PAS**
 
 
 
