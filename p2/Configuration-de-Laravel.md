@@ -35,6 +35,8 @@ Les options disponibles sont :
 
 Grâce à la classe Index configurator, il sera possible de gérer le paramétrage des Index.
 
+**Remarque** : Il va être nécessaire de créer autant dIndexConfigurator que d'Index. Un IndexConfigurator est lié à un **unique** Index et inversement.
+
 La ligne suivante permet de créer un nouvel Index configurator :  
 > `php artisan make:index-configurator MyIndexConfigurator`
 
@@ -56,8 +58,12 @@ class MyIndexConfigurator extends IndexConfigurator
     protected $name = 'produits_nacel';
 
     // Il est possible de paramétrer un analyzer pour les recherches. 
-    // Il est obligatoire qu'il soit ici et non ailleurs.
+    // Il est obligatoire que l'analyzer soit ici et non ailleurs.
     protected $settings = [
+        'index' => [
+            'number_of_shards' => 5, //Paramètre par défaut si rien n'est renseigné
+            'number_of_replicas' => 1 //Paramètre par défaut si rien n'est renseigné
+        ]
         'analysis' => [
             'analyzer' => 'french_light',
             'fields' => [
@@ -70,21 +76,16 @@ class MyIndexConfigurator extends IndexConfigurator
     ];
 }
 ```
-
-Il est possible de créer ce fichier dans un répertoire autre que `App/` :  
-> `php artisan elastic:create-index App\ElasticSearch\IndexConfigurator\VilleIndexConfigurator`  
-
-**MAIS** la création d'un Index (obligatoire) qui survient après n'accepte spécifiquement **que les IndexConfigurator présents dans le dossier `App/`**. 
-
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
+
+**Note importante** : **Tous** les fichiers créés et utilisés par la console *(IndexConfigurator et Modèles)* doivent se situer dans le dossier `App\` et **seulement** dans le dossier `App\`. Aucun sous-dossier n'est utilisable !
 
 # Créer un Index
 
-**Enfin**, la création d'un Index qui suit le paramétrage que l'on vient de configurer ce fait ainsi :  
+**Enfin**, la création d'un Index ce fait ainsi :  
 > `php artisan elastic:create-index App\MyIndexConfigurator`  
 
-**Note importante** : Le dossier `App/` est le seul dossier accepté pour rechercher les IndexConfigurator. Ranger un IndexConfigurator dans un sous dossier de `App/`, tel que `App/IndexConfigurator/MyIndexConfigurator` se soldera d'une erreur typée :   
-> Class 'App\IndexConfigurator\MyIndexConfigurator' not found 
+L'index prendra soit le nom de sa classe (en enlevant "IndexConfigurator") soit le nom spécifié dans le corps de la classe de l'IndexConfigurator utilisé.
 
 # Modèles liés à Elasticsearch
 
@@ -92,8 +93,6 @@ Afin de réaliser des requêtes de recherche à travers Elasticsearch, il faut c
 > `php artisan make:searchable-model MyModel --index-configurator=MyIndexConfigurator`
 
 Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Laravel.  
-Néanmoins, il est possible de renseigner des sous-dossiers après `app/` tel que :  
-> `php artisan make:searchable-model App\..\LeDossierDesModeles\MyModel --index-configurator=MyIndexConfigurator`
 
 Un modèle ressemble à ça :  
 ```php
@@ -132,13 +131,27 @@ class MyModel extends Model
 }
 ```
 
-Chaque modèle représente un type Elasticsearch (même si les types sont voués à disparaitre, pour le moment cela fonctionne comme cela). Par défaut, un type correspond à une table. 
-D'autres options sont proposées dans la [documentation de Scout](https://github.com/babenkoivan/scout-elasticsearch-driver/blob/master/README.md#search-rules).
+Le mapping est important, mieux est définie la structure, meilleure sont indexation et recherche. 
 
-La dernière option importante est la propriété `$searchRules`. Elle permet la mise en place d'algorithmes de recherche pour un modèle. Les détails seront donnés dans la section [Règles de recherche]().
+**Remarque** : Il est obligatoire de rentrer quelque chose dans la variable "$mapping" auquel cas, aucune importation (voir en dessous) ne pourra se faire, avec un message d'erreur typique : 
+> `Nothing to update: the mapping is not specified.`
+
+Chaque modèle représente un type Elasticsearch (même si les types sont voués à disparaitre, pour le moment cela fonctionne comme cela). Par défaut, un type correspond à une table. 
+D'autres options sont proposées dans la [documentation de Scout](https://laravel.com/docs/5.5/scout#configuration).
+
+La dernière option importante est la propriété `$searchRules`. Elle permet la mise en place d'algorithmes de recherche pour un modèle. Les détails seront donnés dans la section [Règles de recherche/SearchRule]().
 
 Après avoir configuré un mapping pour un modèle, on peut le mettre à jour :  
 > `php artisan elastic:update-mapping App\MyModel`
+
+# Indexer des données
+
+Une fois les Index et les Modèles créés, intervient l'indexation des données. 
+
+Une méthode simple grâce à la commande : 
+> `php artisan scout:import "App\MyModel`  
+
+Permet d'aller chercher dans votre base de donnée la table "MyModel" et, si elle la trouve, d'indexer tout son contenu dans l'Index issu du même IndexConfigurator que le modèle. 
 
 # Liste des commandes sur console 
 
@@ -146,14 +159,15 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 
 | Command	| Arguments	| Description |  
 | :-----------: | :-----------: | :---------: |  
-| `make:index-configurator`	| `name` - The name of the class	| Créé un nouvel Index Configurator. |  
-| `make:searchable-model`	| `name` - The name of the class	| Créé un nouveau modèle lié à Elasticsearch. |  
-| `make:search-rule`	| `name` - The name of the class	| Créé une nouvelle règle de recherche. |  
-| `elastic:create-index`	| `index-configurator` - The index configurator class	| Créé un Index Elasticsearch. |  
-| `elastic:update-index`	| `index-configurator` - The index configurator class	| Met à jour les paramètres de configuration et le mapping d'un index Elasticsearch. |  
-| `elastic:drop-index`	| `index-configurator` - The index configurator class	| Supprime un Index Elasticsearch.|  
-| `elastic:update-mapping`	| `model` - The model class	| Met à jour le mapping d'un modèle. |  
-| `elastic:migrate`	| `model` - The model class, `target-index` - The index name to migrate	|  Migre un modèle vers un autre index. |  
+| `make:index-configurator`	| `name` - Le nom de la classe	| Créé un nouvel Index Configurator. |  
+| `make:searchable-model`	| `name` - Le nom de la classe	| Créé un nouveau modèle lié à Elasticsearch. |  
+| `make:search-rule`	| `name` - Le nom de la classe	| Créé une nouvelle règle de recherche. |  
+| `elastic:create-index`	| `index-configurator` - La classe de l'IndexConfigurator	| Créé un Index Elasticsearch. |  
+| `elastic:update-index`	| `index-configurator` - La classe de l'IndexConfigurator	| Met à jour les paramètres de configuration et le mapping d'un index Elasticsearch. |  
+| `elastic:drop-index`	| `index-configurator` - La classe de l'IndexConfigurator	| Supprime un Index Elasticsearch.|  
+| `elastic:update-mapping`	| `model` - La classe modèle	| Met à jour le mapping d'un modèle. |  
+| `elastic:migrate`	| `model` - La classe modèle, `target-index` - Le nom de l'index à migrer	|  Migre un modèle vers un autre index. |  
+| `scout:import` | `model` - La classe modèle | Indexe les données de la table SQL dont le nom est identique au nom du modèle utilisé. |
 
 
 Pour une description détaillées, entrer cette ligne de commande avec la commande qui vous intéresse : `php artisan help [command]`
