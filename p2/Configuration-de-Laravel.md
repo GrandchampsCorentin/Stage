@@ -51,7 +51,8 @@ class MyIndexConfigurator extends IndexConfigurator
 {
     use Migratable;
 
-    // Variable optionnelle qui reconfigure le nom par défaut de l'Index configurator.
+    // Variable optionnelle qui reconfigure le nom par défaut de l'Index créé à partir de cette configuration.
+    // De base, le nom de l'Index sera le même que celui de la classe sans "IndexConfigurator"
     protected $name = 'produits_nacel';
 
     // Il est possible de paramétrer un analyzer pour les recherches. 
@@ -69,17 +70,32 @@ class MyIndexConfigurator extends IndexConfigurator
     ];
 }
 ```
+
+Il est possible de créer ce fichier dans un répertoire autre que `App/` :  
+> `php artisan elastic:create-index App\ElasticSearch\IndexConfigurator\VilleIndexConfigurator`  
+
+**MAIS** la création d'un Index (obligatoire) qui survient après n'accepte spécifiquement **que les IndexConfigurator présents dans le dossier `App/`**. 
+
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
+
+# Créer un Index
 
 **Enfin**, la création d'un Index qui suit le paramétrage que l'on vient de configurer ce fait ainsi :  
 > `php artisan elastic:create-index App\MyIndexConfigurator`  
+
+**Note importante** : Le dossier `App/` est le seul dossier accepté pour rechercher les IndexConfigurator. Ranger un IndexConfigurator dans un sous dossier de `App/`, tel que `App/IndexConfigurator/MyIndexConfigurator` se soldera d'une erreur typée :   
+> Class 'App\IndexConfigurator\MyIndexConfigurator' not found 
 
 # Modèles liés à Elasticsearch
 
 Afin de réaliser des requêtes de recherche à travers Elasticsearch, il faut créer un/des modèles permettant de le faire :  
 > `php artisan make:searchable-model MyModel --index-configurator=MyIndexConfigurator`
 
-Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Laravel et ressemble à ça :  
+Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Laravel.  
+Néanmoins, il est possible de renseigner des sous-dossiers après `app/` tel que :  
+> `php artisan make:searchable-model App\..\LeDossierDesModeles\MyModel --index-configurator=MyIndexConfigurator`
+
+Un modèle ressemble à ça :  
 ```php
 <?php
 
