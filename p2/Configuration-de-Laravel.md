@@ -35,7 +35,7 @@ Les options disponibles sont :
 
 Grâce à la classe Index configurator, il sera possible de gérer le paramétrage des Index.
 
-**Remarque** : Il va être nécessaire de créer autant dIndexConfigurator que d'Index. Un IndexConfigurator est lié à un **unique** Index et inversement.
+**Remarque** : Il va être nécessaire de créer autant d'IndexConfigurator que d'Index. Un IndexConfigurator est lié à un **unique** Index et inversement.
 
 La ligne suivante permet de créer un nouvel Index configurator :  
 > `php artisan make:index-configurator MyIndexConfigurator`
@@ -77,8 +77,6 @@ class MyIndexConfigurator extends IndexConfigurator
 }
 ```
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
-
-**Note importante** : **Tous** les fichiers créés et utilisés par la console *(IndexConfigurator et Modèles)* doivent se situer dans le dossier `App\` et **seulement** dans le dossier `App\`. Aucun sous-dossier n'est utilisable !
 
 # Créer un Index
 
@@ -133,7 +131,7 @@ class MyModel extends Model
 }
 ```
 
-Le mapping est important, mieux est définie la structure, meilleure sont indexation et recherche. 
+Le mapping est important, mieux est définie la structure, meilleure sont indexation et recherche. On peut notamment spécifier quel analyzer sera utilisé pour tel ou tels champs lors de la recherche. 
 
 **Remarque** : Il est obligatoire de rentrer quelque chose dans la variable "$mapping" auquel cas, aucune importation (voir en dessous) ne pourra se faire, avec un message d'erreur typique : 
 > `Nothing to update: the mapping is not specified.`
