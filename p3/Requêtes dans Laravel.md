@@ -10,18 +10,20 @@ Maintenant on peut indexer et faire des recherches de données.
 
 #### Requêtes de recherche basiques :  
 ```php
-// créer la requête
+// Créer la requête
 App\MyModel::search('phone')
-    // filtrer 
+    // Filtrer par champ
     ->where('color', 'red')
-    // organiser les données
+    // Organiser les données
     ->orderBy('price', 'asc')
-    // mettre un offset
+    // Définit à partir de quel résultat on commence à afficher
     ->from(0)
-    // mettre une limite
+    // Définit combien de résultats sont affichés (ici 10)
     ->take(10)
-    // obtenir les résultats
+    // Obtenir les résultats
     ->get();
+    // Passage au JSON
+    ->JSON();
 ```  
 Si il est nécessaire de préciser l'existence de relations, c'est possible avec `with` :  
 
@@ -183,7 +185,7 @@ Une migration peu prendre quelques temps à ce faire, donc pour éviter les rale
 
 Avant de lancer la commande, il est impératif que l'Index configurator utilises l'élément `ScoutElastic\Migratable`.   
 Si il n'y est pas, ajoutez le, et lancez la commande  
-> `php artisan elastic:update-index App\MyIndexConfigurator`. MyIndexConfigurator étant un argument rien de plus.
+> `php artisan elastic:update-index App\MyIndexConfigurator`.
 
 Quand tout est prêt, et une fois les changements réalisés dans le mapping du modèle, lancez la commande `elastic:migrate` en utilisant la classe du modèle en premier argument et l'index ciblé en second argument :  
 > `php artisan elastic:migrate App\MyModel my_index_v2`

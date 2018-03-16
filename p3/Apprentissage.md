@@ -30,6 +30,8 @@ Le Mapping c'est l'action de définir spécifiquement la structure d'un Index.
 
 Ce procédé est une bonne pratique à avoir, car il est possible de créer des Index sans structure construite au préalable. Si vous avez du mal à comprendre, dites vous que c'est presque la même chose que déclarer une table SQL et ses champs.
 
+**Note** : Il est possible de définir ici un *Analyzer* qui réorganisera les données de l'Index. Couplé avec une recherche utilisant le même *Analyzer* la pertinence des résultats n'en sera qu'accrue.
+
 ## Modifier/Supprimer un index 
 
 La modification d'un Index ne peut pas se faire directement.

@@ -29,7 +29,7 @@ Les options disponibles sont :
 | :-----------: | :---------: |
 |client	| Une des configurations pour paramétrer Elasticsarch. Plus d'informations [ici](https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/_configuration.html#_building_the_client_from_a_configuration_hash). Par défaut l'hôte est déterminé comme suit : localhost:9200. |
 |update_mapping	|Une option qui permet de définir si on automatise la mise à jour des mappings. Par défaut c'est configuré sur `true`|
-|indexer	|Configuré `single` pour avoir une indexation document par document ou `bulk` pour indexer un wagon de documents avec la méthode *bulk*. Par défaut, c'est configuré sur `single`.|
+|indexer	|Configuré `single` pour avoir une indexation document par document ou `bulk` pour indexer un wagon de documents avec la méthode *bulk*. Par défaut, c'est configuré sur `single`. **Note** : la commande d'indexation des données présentes en BD `scout:import` fonctionne très bien en `single`.|
 
 # Index configurator
 
