@@ -167,18 +167,27 @@ Il faudra alors rajouter plusieurs éléments :
 > `use App\Models\ES\Configurator\LangueIndexConfigurator;`  
 
 * L'utilisation de la classe Searchable  
+
 > `use Searchable;`  
+
 * La connexion à la base de données ciblée  
+
 > ` protected $connection  = 'web'; `    
 > `protected $table 		    = 'langues';`    
 > ` protected $guarded 		  = [];`    
+
 * L'utilisation de l'IndexConfigurator  
-> `protected $indexConfigurator = LangueIndexConfigurator::class;`  
+
+> `protected $indexConfigurator = LangueIndexConfigurator::class;`
+
 * Les règles de recherches   
+
 > `    protected $searchRules = [
         //
     ];`
+
 * Le mapping  
+
 > `    protected $mapping = [
         'properties' => [
             'id' => [
