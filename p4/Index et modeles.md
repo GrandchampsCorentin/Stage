@@ -1,6 +1,6 @@
 # Etape 1 : La configuration d'un Index
 
-Grâce à la classe `Index configurator`, il sera possible de gérer la configuation de chaque Index.
+Grâce à la classe `Index configurator`, il sera possible de gérer la configuration de chaque Index.
 
 **Remarque** : Il va être nécessaire de créer autant d'IndexConfigurator que d'Index. Un IndexConfigurator est lié à un **unique** Index et inversement.
 
