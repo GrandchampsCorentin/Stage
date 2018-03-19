@@ -16,7 +16,7 @@
 # Installation et configuration d'ElasticSearch
 
 - [Installation sur Windows](../p2/Installation) OK
-- [Installation sur Linux](../p2/Installation-linux) OK
+- [Installation sur Linux](../p2/Installation-linux)
 - [Installer un plugin](../p2/Plugin) OK
 - [Association à Laravel](../p2/Configuration-de-Laravel) OK
 
