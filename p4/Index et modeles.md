@@ -266,7 +266,7 @@ La dernière option importante est la propriété `$searchRules`. Elle permet la
 Après avoir configuré un mapping pour un modèle, on peut le mettre à jour :  
 > `php artisan elastic:update-mapping App\MyModel`
 
-# Indexer des données
+# Etape 4 : Indexer des données
 
 Une fois les Index et les Modèles créés, intervient l'indexation des données. 
 
