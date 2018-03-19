@@ -161,22 +161,22 @@ class Langue extends Model
 ```
 
 Il faudra alors rajouter plusieurs éléments :
-* L'appel des classes Searchable et IndexConfigurator
-> `use ScoutElastic\Searchable;`  
-> `use App\Models\ES\Configurator\LangueIndexConfigurator;`
-* L'utilisation de la classe Searchable
-> `use Searchable;`
-* La connexion à la base de données ciblée
-> ` protected $connection  = 'web'; `  
-> `protected $table 		    = 'langues';`  
-> ` protected $guarded 		  = [];`  
-* L'utilisation de l'IndexConfigurator
-> `protected $indexConfigurator = LangueIndexConfigurator::class;`
-* Les règles de recherches
+* L'appel des classes Searchable et IndexConfigurator  
+> `use ScoutElastic\Searchable;`    
+> `use App\Models\ES\Configurator\LangueIndexConfigurator;`  
+* L'utilisation de la classe Searchable  
+> `use Searchable;`  
+* La connexion à la base de données ciblée  
+> ` protected $connection  = 'web'; `    
+> `protected $table 		    = 'langues';`    
+> ` protected $guarded 		  = [];`    
+* L'utilisation de l'IndexConfigurator  
+> `protected $indexConfigurator = LangueIndexConfigurator::class;`  
+* Les règles de recherches   
 > `    protected $searchRules = [
         //
     ];`
-* Le mapping
+* Le mapping  
 > `    protected $mapping = [
         'properties' => [
             'id' => [
