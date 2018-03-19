@@ -307,4 +307,5 @@ Toutes les commandes "artisan" sont listées ci-dessous :
 | `scout:import` | `model` - La classe modèle | Indexe les données de la table SQL dont le nom est identique au nom du modèle utilisé. |
 
 
+
 Pour une description détaillées, entrer cette ligne de commande avec la commande qui vous intéresse : `php artisan help [command]` **EXISTE MAIS NE FONCTIONNE PAS**
