@@ -15,6 +15,8 @@ Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossi
 Il ne faut cependant pas oublier de spécifier le **namespace** dans le fichier !
 
 Le fichier IndexConfigurator ressemble à ceci :  
+<details><summary>IndexConfigurator</summary><p>
+
 ```php
 <?php
 
@@ -23,13 +25,13 @@ namespace App;
 use ScoutElastic\IndexConfigurator;
 use ScoutElastic\Migratable;
 
-class MyIndexConfigurator extends IndexConfigurator
+class LangueIndexConfigurator extends IndexConfigurator
 {
     use Migratable;
 
     // Variable optionnelle qui reconfigure le nom par défaut de l'Index créé à partir de cette configuration.
     // De base, le nom de l'Index sera le même que celui de la classe sans "IndexConfigurator"
-    protected $name = 'produits_nacel';
+    protected $name = 'Langue';
 
     // Il est possible de paramétrer un analyzer pour les recherches. 
     // Il est obligatoire que l'analyzer soit ici et non ailleurs.
@@ -74,6 +76,9 @@ class MyIndexConfigurator extends IndexConfigurator
     ];
 }
 ```
+
+</p></details>
+
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
 
 # Etape 2 : La création d'un Index
@@ -105,6 +110,8 @@ Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Lar
 > `php artisan make:searchable-model App\Models\Langue --index-configurator=App\Models\Es\Configurator\LangueIndexConfigurator`
 
 Un modèle ressemble à ça :  
+<details><summary>Nouveau Modèle</summary><p>
+
 ```php
 <?php
 
@@ -136,10 +143,13 @@ class MyModel extends Model
     ];
 }
 ```
+</p></details>
 
 ## Utiliser un modèle existant
 
 Votre modèle est déjà créé : 
+
+<details><summary>Ancien Modèle</summary><p>
 
 ```php
 <?php
@@ -159,6 +169,7 @@ class Langue extends Model
     }
 }
 ```
+</p></details>
 
 Il faudra alors rajouter plusieurs éléments :
 * L'appel des classes Searchable et IndexConfigurator  
@@ -199,6 +210,9 @@ Il faudra alors rajouter plusieurs éléments :
 `
 
 Le modèle devrait ressembler à ça une fois toutes les modifications faites :  
+
+<details><summary>Ancien Modèle après Modifications</summary><p>
+
 ```php
 <?php
 
@@ -250,6 +264,7 @@ class Langue extends Model
     }
 }
 ```
+</p></details>
 
 ## L'importance du mapping
 

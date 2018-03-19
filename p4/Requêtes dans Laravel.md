@@ -6,7 +6,7 @@ Une fois créés :
 * un modèle particulier  
 
 Tout est prêt.  
-Maintenant on peut indexer et faire des recherches de données.
+Maintenant on peut faire des recherches sur les index.
 
 #### Requêtes de recherche basiques :  
 ```php
@@ -68,6 +68,8 @@ App\MyModel::searchRaw([
 ]);
 ```
 Cette requête va renvoyer une réponse brute (raw response).
+
+Pour plus de renseignements sur les méthodes de Laravel Scout c'est [ci](https://laravel.com/docs/5.6/scout#searching).
 
 # Règles de recherche / SearchRule
 
@@ -174,7 +176,7 @@ Il existe un petit nombre de filtres variés :
 |whereRegexp($field, $value, $flags = 'ALL')	|whereRegexp('name.raw', 'A.+')	|Filtre les enregistrements en fonction d'une expression régulière choisie. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/query-dsl-regexp-query.html#regexp-syntax) vous trouverez des renseignements sur la syntaxe.|
 |whereGeoDistance($field, $value, $distance)|	whereGeoDistance('location', [-70, 40], '1000m')	|Filtre les enregistrements en fonction d'un point donné et d'un écart donné entre le point et la localisation. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html) des renseignements supplémentaies syntaxiques.|
 |whereGeoBoundingBox($field, array $value)|	whereGeoBoundingBox('location', ['top_left' => [-74.1, 40.73], 'bottom_right' => [-71.12, 40.01]])|	Filtre les enregistrements avec des spécifications données. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-query.html) des renseignements supplémentaies syntaxiques.|
-|whereGeoPolygon($field, array $points)	|whereGeoPolygon('location', [[-70, 40],[-80, 30],[-90, 20]])	|Filtre les enregistrements dans un polygone. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-polygon-query.html) des renseignements supplémentaies syntaxiques.|
+|whereGeoPolygon($field, array $points)	| whereGeoPolygon('location', [[-70, 40],[-80, 30],[-90, 20]])	|Filtre les enregistrements dans un polygone. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-polygon-query.html) des renseignements supplémentaies syntaxiques.|
 
 
 # Migrations sans ralentissement
