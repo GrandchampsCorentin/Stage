@@ -162,8 +162,10 @@ class Langue extends Model
 
 Il faudra alors rajouter plusieurs éléments :
 * L'appel des classes Searchable et IndexConfigurator  
+
 > `use ScoutElastic\Searchable;`    
 > `use App\Models\ES\Configurator\LangueIndexConfigurator;`  
+
 * L'utilisation de la classe Searchable  
 > `use Searchable;`  
 * La connexion à la base de données ciblée  
