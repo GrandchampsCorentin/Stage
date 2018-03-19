@@ -18,12 +18,15 @@
 - [Installation sur Windows](../p2/Installation) OK
 - [Installation sur Linux](../p2/Installation-linux)
 - [Installer un plugin](../p2/Plugin) OK
-- [Association à Laravel](../p2/Configuration-de-Laravel) OK
 
 # Utilisation d'ElasticSearch
 
-- [I) Index et Documents](../p3/apprentissage) En construction
-- [II) La recherche avec ES](../p3/Recherche) En construction
-- [III) Requêtes dans Laravel](../p3/Requêtes-dans-Laravel) OK ?
+- [Index et Documents](../p3/apprentissage) En construction
+- [La recherche avec ES](../p3/Recherche) En construction
 
+# Laravel et Elasticsearch
+
+- [Ajout d'Elasticsearch à Laravel](../p4/Configuration-de-Laravel) OK
+- [Index et Modèles](../p4/Index-et-modeles)
+- [Requêtes dans Laravel](../p4/Requêtes-dans-Laravel)
 
