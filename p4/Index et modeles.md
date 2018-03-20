@@ -15,7 +15,6 @@ Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossi
 Il ne faut cependant pas oublier de spécifier le **namespace** dans le fichier !
 
 Le fichier IndexConfigurator ressemble à ceci :  
-<details><summary>IndexConfigurator</summary><p>  
 
 ```php
 <?php
@@ -77,7 +76,6 @@ class LangueIndexConfigurator extends IndexConfigurator
 }
 ```
 
-</p></details>
 
 Plus d'informations sur le paramétrage d'un index dans la [documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-management.html).
 
@@ -110,7 +108,6 @@ Le fichier `MyModel.php` va se créer dans le dossier `app/` de votre projet Lar
 > `php artisan make:searchable-model App\Models\Langue --index-configurator=App\Models\Es\Configurator\LangueIndexConfigurator`
 
 Un modèle ressemble à ça :  
-<details><summary>Nouveau Modèle</summary><p>
 
 ```php
 <?php
@@ -143,13 +140,10 @@ class MyModel extends Model
     ];
 }
 ```
-</p></details>
 
 ## Utiliser un modèle existant
 
 Votre modèle est déjà créé : 
-
-<details><summary>Ancien Modèle</summary><p>
 
 ```php
 <?php
@@ -169,7 +163,7 @@ class Langue extends Model
     }
 }
 ```
-</p></details>
+
 
 Il faudra alors rajouter plusieurs éléments :
 * L'appel des classes Searchable et IndexConfigurator  
@@ -210,8 +204,6 @@ Il faudra alors rajouter plusieurs éléments :
 `
 
 Le modèle devrait ressembler à ça une fois toutes les modifications faites :  
-
-<details><summary>Ancien Modèle après Modifications</summary><p>
 
 ```php
 <?php
@@ -264,7 +256,6 @@ class Langue extends Model
     }
 }
 ```
-</p></details>
 
 ## L'importance du mapping
 
