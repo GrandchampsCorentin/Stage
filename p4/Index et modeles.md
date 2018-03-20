@@ -15,7 +15,7 @@ Cette ligne de commande va créer le fichier `MyIndexConfigurator` dans le dossi
 Il ne faut cependant pas oublier de spécifier le **namespace** dans le fichier !
 
 Le fichier IndexConfigurator ressemble à ceci :  
-<details><summary>IndexConfigurator</summary><p>
+<details><summary>IndexConfigurator</summary><p>  
 
 ```php
 <?php
