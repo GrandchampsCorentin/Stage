@@ -68,7 +68,7 @@ La construction d'une requête searchRaw est presque identique à celle d'un doc
 * Les `:` deviennent des `=>`
 
  Le résultat d'une requête `searchRaw()` est déjà au format JSON et ne nécessite pas l'application d'un `explain()` ou d'un `profile()` pour proposer des informations supplémentaires.   
- 
+
 **Remarque** : Pour plus d'informations sur le `explain()` ou le `profile()`, allez voir la section **Debug** en bas de ce document.
 
 **Documentation supplémentaire** : Pour plus de renseignements sur les méthodes de Laravel Scout c'est [ici qu'il faut cliquer](https://laravel.com/docs/5.6/scout#searching).
@@ -160,7 +160,7 @@ class MyModel extends Model
     ];
 }
 ```
-**Note** : Les règles de recherche dans les modèles seront appliquées pour chaque recherche effectuée à travers ce modèle. Autrement dis, il faut les voir comme des routines. Vous utilisez le modèle ? Alors le traitement va se faire et par votre traitement ET par les règles de recherche assignées au modèle. 
+**Note** : Les règles de recherche dans les modèles seront appliquées pour chaque recherche effectuée à travers ce modèle. Autrement dis, il faut les voir comme des routines. Vous utilisez le modèle ? Alors le traitement va se faire à travers votre traitement ET aussi à travers les règles de recherche assignées au modèle. 
 
 ## Improvisation dans un traitement du QueryBuilder
 
