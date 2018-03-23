@@ -25,27 +25,22 @@ App\MyModel::search('phone')
     // Passage au JSON
     ->JSON();
 ```  
-Si il est nécessaire de préciser l'existence de relations, c'est possible avec `with` :  
-
+Si il est nécessaire de préciser l'existence de relations, c'est possible avec `with` :    
+**Remarque** : Je n'ai pas bien saisi l'utilité d'une telle méthode.  
 ```php
 App\MyModel::search('phone') 
     ->with('makers')
     ->get();
 ```
-En plus des fonctionnalités standart, le package offre la possibilité de filtrer les données dans Elasticsearch sans spécifier de requête :  
+En plus des fonctionnalités standart, le package offre la possibilité de filtrer les données dans Elasticsearch sans spécifier de requête.  
+`search('*')` fera son travail de comparaison sur l'ensemble de l'index cible :  
 ```php
 App\MyModel::search('*')
     ->where('id', 1)
     ->get();
 ```
 
-Il est aussi possible d'override les règles de recherche du modèle :  
-```php
-App\MyModel::search('Brazil')
-    ->rule(App\MySearchRule::class)
-    ->get();
-```
-Et d'utiliser une variété de conditions `where` :  
+Utiliser une variété de conditions `where` est possible (voir la liste dans le tableau en fin de document) :  
 ```php
 App\MyModel::search('*')
     ->whereRegexp('name.raw', 'A.+')
@@ -53,7 +48,8 @@ App\MyModel::search('*')
     ->whereExists('unemployed')
     ->get();
 ```
-Enfin, il est toujours possible d'envoyer une requête personnalisée :  
+Enfin, il est toujours possible d'envoyer une requête personnalisée grâce au `searchRaw()` qui est une méthode très intéressante lorsqu'il est nécessaire de sortir des sentiers battus par le driver.  
+Un exemple :  
 ```php
 App\MyModel::searchRaw([
     'query' => [
@@ -67,34 +63,51 @@ App\MyModel::searchRaw([
     ]
 ]);
 ```
-Cette requête va renvoyer une réponse brute (raw response).
+La construction d'une requête searchRaw est presque identique à celle d'un document JSON à quelques variantes près :
+* Les `{ }` deviennent des `[ ]`
+* Les `:` deviennent des `=>`
 
-Pour plus de renseignements sur les méthodes de Laravel Scout c'est [ci](https://laravel.com/docs/5.6/scout#searching).
+ Le résultat d'une requête `searchRaw()` est déjà au format JSON et ne nécessite pas l'application d'un `explain()` ou d'un `profile()` pour proposer des informations supplémentaires.   
+ 
+**Remarque** : Pour plus d'informations sur le `explain()` ou le `profile()`, allez voir la section **Debug** en bas de ce document.
+
+**Documentation supplémentaire** : Pour plus de renseignements sur les méthodes de Laravel Scout c'est [ici qu'il faut cliquer](https://laravel.com/docs/5.6/scout#searching).
 
 # Règles de recherche / SearchRule
+
+## Créer une SearchRule
 
 Une règle de recherche est une classe qui décrit comment une requête de recherche va être exécutée.  
 La commande ci-dessous permet de créer une telle classe : 
 
 > `php artisan make:search-rule MySearchRule`
 
-Dans le fichier `app/MySearchRule.php` on trouvera cette définition de la classe :  
+Avec cette ligne de commande le fichier `MySearchRule` sera créé dans le dossier `App\`.
+
+**Note** : Il est possible de déterminer un emplacement spécifique pour ces classe là tel que :   
+> `php artisan make:search-rule App\Models\ES\SearchRules\LangueSearchRule`
+
+Dans le fichier `MySearchRule.php` on trouvera cette définition de la classe :  
 ```php
 <?php
 
-namespace App;
+namespace App\Models\ES\SearchRules;
 
 use ScoutElastic\SearchRule;
 
-class MySearch extends SearchRule
+class LangueSearchRule extends SearchRule
 {
-    // Cette méthode retourne un array qui représente un contenu de requête booléenne.
-    public function buildQueryPayload()
+    //Cette méthode retourne un array, qui sera traité comme du JSON
+    //Il est possible de créer n'importe quel traitement de requête à renvoyer
+    //Par exemple, ci-dessous, un bout de requête booléenne (must[]) sera renvoyé
+    public function buildQueryPayload() //Ne pas toucher au nom de la fonction
     {
         return [
             'must' => [
                 'match' => [
-                    'name' => $this->builder->query
+                    //$this->builder->query va associer votre requête textuelle au champ libelle 
+                    //Afin de faire des comparaisons de tokens et déterminer si ils matchent ensemble
+                    'libelle' => $this->builder->query 
                 ]
             ]
         ];
@@ -102,22 +115,33 @@ class MySearch extends SearchRule
 }
 ```
 
-Vous pouvez vous renseigner sur les requête booléennes [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html).
+## Utilisation d'une SearchRule
 
-La règle de recherche par défaut renvoie le résultat suivant :  
+Pour utiliser une règle de recherche, il "suffit" de l'appeler dans votre traitement Elasticscout.
+
+Exemple :  
 ```php
-return [
-   'must' => [
-       'query_string' => [
-           'query' => $this->builder->query
-       ]
-   ]
-];
+//Entête
+use App\Models\ES\SearchRules\LangueSearchRule;
+use App\Models\ProduitSlES
+
+/*----
+/...
+----*/
+
+//Requête
+$requêteLangue = ProduitSlES::search('*')
+                        ->whereIn('id', $tableauIDlangues)
+                        ->rule(LangueSearchRule::class) //On utilise bien ici la règle de recherche stipulée au dessus
+                        ->get()
+                        ->JSON();
 ```
 
-Ce qui signifie que par défaut, lorsque on appelle la méthode `search` sur un modèle, il essaie de trouver un résultat sur tous les champs du modèle.
+La règle de recherche renvoie tout ce qu'elle contient dans son `return`.  
 
-Pour déterminer les règles par défaut de recherche propres à un modèle il faut ajouter une propriété :  
+## Les SearchRules dans les Modèles
+
+Il est possible d'assigner des règles de recherche en prévision dans les modèles :  
 ```php
 <?php
 
@@ -136,16 +160,20 @@ class MyModel extends Model
     ];
 }
 ```
+**Note** : Les règles de recherche dans les modèles seront appliquées pour chaque recherche effectuée à travers ce modèle. Autrement dis, il faut les voir comme des routines. Vous utilisez le modèle ? Alors le traitement va se faire et par votre traitement ET par les règles de recherche assignées au modèle. 
+
+## Improvisation dans un traitement du QueryBuilder
 
 Il est aussi possible de rajouter des règles de recherche dans le constructeur de requête (query builder) : 
 
 ```php
-// Il est possible de rajouter une classe SearchRule directement
+//Il est possible de rajouter une classe SearchRule directement
+//Ou d'override une règle existante dans le modèle
 App\MyModel::search('Brazil')
     ->rule(App\MySearchRule::class)
     ->get();
     
-// ou en appelant une règle particulière
+//Ou en créant une règle particulière directement dans l'enchainement du traitement
 App\MyModel::search('Brazil')
     ->rule(function($builder) {
         return [
@@ -196,7 +224,7 @@ Quand tout est prêt, et une fois les changements réalisés dans le mapping du 
 
 # Debug
 
-Mise à part le `->get()` qui ne retourne que les documents concernés par la requête, il existe deux méthodes qui peuvent aider lors de l'analyse de résultats suite à des recherches :
+Mise à part le `->get()` qui ne retourne que les documents concernés par la requête, il existe deux méthodes qui peuvent aider lors de l'analyse de résultats suite à des recherches avce un `search()` :
 
 `explain`  
 ```php
