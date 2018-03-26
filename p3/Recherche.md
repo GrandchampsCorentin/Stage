@@ -21,11 +21,11 @@ Par défaut le Boost est de 1.
 ```json
 POST _search
 {
-    "query": { //On indique que l'on fait une requête
-        "match" : { //Cette requête doit matcher
-            "libelle" : { //Le(s) champ(s) libelle de tout le cluster (voir l'url)
-                "query" : "séjour linguistique", //La comparaison se fait avec cette requête textuelle
-                "boost" : 2 //On booste la valeur du score lorsque cette requête matche
+    "query": { //On_indique_que_l'on_fait_une_requête
+        "match" : { //Cette_requête_doit_matcher
+            "libelle" : { //Le(s)_champ(s)_libelle_de_tout_le_cluster_(voir_l'url)
+                "query" : "séjour linguistique", //La_comparaison_se_fait_avec_cette_requête_textuelle
+                "boost" : 2 //On_booste_la_valeur_du_score_lorsque_cette_requête_matche
             }
         }
     }
@@ -38,7 +38,7 @@ Il est possible d'affecter un Boost à un champ :
 POST _search
 {
     "query": {
-        "multi_match" : { //Cette propriété permet de faire la requête sur plusieurs champs
+        "multi_match" : { //Cette_propriété_permet_de_faire_la_requête_sur_plusieurs_champs
                 "fields" : {"libelle^2", "contenu", "introduction^5", "accroche^10", "intitule"},
                 "query" : "séjour linguistique",
             }
@@ -112,7 +112,7 @@ range
 
 Une requête booléenne se présente comme suit : 
 ```json
-POST _search
+POST_/_search
 {
     "query" : {
         "bool" : {
@@ -146,7 +146,7 @@ POST _search
 Exemple concret : 
 
 ```json
-POST sl_produit_e_ss/_doc/_search
+POST_/sl_produit_es/sl_produit_e_ss/_search
 {
     "query" : {
         "bool" : {
@@ -165,8 +165,6 @@ POST sl_produit_e_ss/_doc/_search
     }
 }
 ```
-
-Les 
 
 # Analyzer
 
