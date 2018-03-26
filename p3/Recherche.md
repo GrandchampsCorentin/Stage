@@ -314,12 +314,13 @@ Ses paramètres :
 
 ## Query string :
 
-`Query_string` est la méthode avancée de recherche textuelle, agrémentée de la syntaxe Lucene. Cette méthode attaque la chaine de caractère en la segmentant en tokens. (1 token = 1 "mot").
+`Query_string` est la méthode avancée de recherche textuelle, agrémentée de la syntaxe Lucene.
 
-fuziness
-wildcard
-recherche de proximité
-range
+fuziness : Accepte les fautes de frappe
+wildcard : Accepte l'oubli d'une ou de plusieurs lettres
+recherche de proximité : Accepte que l'ordre des mots de la requête textuelle soit différent de celui proposé
+range : Accepte des intervalles de dates / nombres / chaines de caractères
+caractères réservés : `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
 
 **Documentation supplémentaire** : Tous les détails et subtilités de la propriété query_string [ici dans la documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html).
 
@@ -381,7 +382,5 @@ POST sl_produit_es/sl_produit_e_ss/_search
     }
 }
 ```
-
-
 
 # Aggregations
