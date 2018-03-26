@@ -112,7 +112,7 @@ range
 
 Une requête booléenne se présente comme suit : 
 ```json
-POST_/_search
+POST _search
 {
     "query" : {
         "bool" : {
@@ -146,7 +146,7 @@ POST_/_search
 Exemple concret : 
 
 ```json
-POST_/sl_produit_es/sl_produit_e_ss/_search
+POST sl_produit_es/sl_produit_e_ss/_search
 {
     "query" : {
         "bool" : {
