@@ -34,6 +34,12 @@ Lors d'opérations sur des *Documents* telles que l'indexation, la recherche, la
 
 Dans un *Cluster*, on peut définir une infinité d'*Index*.
 
+### L'Index inversé
+
+En informatique, un *Index inversé* est une correspondance entre du contenu, comme des mots ou des nombres, et sa position dans un ensemble de données comme un enregistrement en base de données, un document ou un ensemble de documents.
+
+Le but de l'*Index inversé* est de permettre une recherche plein texte plus rapide, contre un temps d'insertion de nouvelles données augmenté. Les *Tokens* sont le contenu des *Index inversés* d'Elasticsearch.
+
 ### Shards & Replicas
 
 #### Shards 
@@ -64,6 +70,19 @@ Par défaut, chaque Index est découpé en 5 *Shards* et possède 1 *Replica*, s
 Dans un même *Index*, il est possible de créer des relations parent/enfant entre deux Documents.
 
 *Ordre d'idée* : Fichier
+
+### Les Tokens
+
+Elasticsearch utilise des *Tokenizers* pour créer des *Tokens*.   
+
+Les *Tokenizers* reçoivent des flux de caractères et les fractionnent en *Tokens* uniques.   
+Généralement, les *Tokens* représentent des mots, des mots composés ou des morceaux de phrases. En effet, le *Tokenizer* par défaut fractionne le texte à chaque fois qu'il rencontre un espace. Ainsi il convertit le texte "Mon séjour linguistique" en une suite de termes, ou *Tokens* comme suit : `[Mon, séjour, linguistique]`.
+
+Il existe plusieurs *Tokenizers* ayant chacuns leur particularité. Il y a des informations supplémentaire dans la [documentation d'Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-custom-analyzer.html).
+
+Les *Tokens* sont la composante des *Index inversés* et permettent de faire des recherches textuelles plus simple et pertinentes, notamment à travers les *Analyzers*. 
+
+*Ordre d'idée* : Texte
 
 # Le RESTful
 

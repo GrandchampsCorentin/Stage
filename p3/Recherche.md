@@ -51,6 +51,155 @@ Dans la propriété "fields", on nomme les champs concernés, et, si on souhaite
 
 **Note** : Si pour le moment on ne parle que des Boosts "positifs", il existe la propriété `negative_boost` qui permet de rentrer des Boosts inférieurs à 1, et qui diminuent donc la valeur du score qu'ils impactent.
 
+# L'Analyzer
+
+L'Analyzer est un outil très puissant permettant de passer outre les règles verbeuses telles que : le genre, le nombre, la conjugaisons et les caractères spéciaux de la langue. 
+
+## L'Analyzer dans l'Index
+
+Paramétrer un analyzer dans l'index permettra de créer un index inversé, d'analyser tous les documents de l'index et de transformer les textes en tokens, utilisables pour la recherche.
+
+Le mapping d'un index avec analyzer ressemble à cela : 
+```php
+<?php
+
+namespace App\Models\ES\Configurator;
+
+use ScoutElastic\IndexConfigurator;
+use ScoutElastic\Migratable;
+
+class SlProduitESConfigurator extends IndexConfigurator
+{
+    use Migratable;
+
+    protected $name = 'sl_produit_es';
+
+    protected $settings = [
+        'analysis' => [ //On instancie les divers filtres pour l'analyzer
+            'filter' => [
+                'french_elision' => [ //Ce filtre supprime les articles avec apostrophe
+                    'type' => 'elision',
+                    'articles_case' => true,
+                    'articles' => [
+                        'l', 'm', 't', 'qu', 'n', 's',
+                        'j', 'd', 'c', 'jusqu', 'quoiqu',
+                        'lorsqu', 'puisqu',
+                    ],
+                ],
+                'french_stop' => [ //Ce filtre nerécupère pas sous forme de token les mots communs de la langue française (Déterminants, etc...)
+                    'type' => 'stop',
+                    'stopwords' => '_french_',
+                ],
+                'french_stemmer' => [ //Ce filtre supprime genre, nombre et conjugaison en ne gardant que la racine des mots
+                    'type' => 'stemmer',
+                    'language' => 'light_french',
+                ],
+            ],
+            'analyzer' => [ //On construit l'analyzer
+                'french' => [ //Le nom de l'analyzer
+                    'tokenizer' => 'standard', //Le type du tokenizer à adopter
+                    'filter' => [ //Les filtres précédemments instanciés qui seront utilisés
+                        'french_elision',
+                        'lowercase', //Réduit tous les termes à être en minuscule
+                        'french_stop',
+                        'french_stemmer',
+                    ],
+                ],
+            ],
+        ],
+    ];
+}
+```
+
+## L'Analyzer dans le Modèle
+
+Une fois l'Analyzer construit, il faut l'appliquer aux divers champs de l'index qui sont textuels. De ce fait, un index inversé sera rempli des tokens issus de l'analyse des données indexées.
+
+Exemple : 
+```php
+<?php
+namespace App\Models;
+
+use ScoutElastic\Searchable;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\ES\Configurator\SlProduitESConfigurator;
+
+class SlProduitES extends Model
+{
+    use Searchable;
+
+    protected $indexConfigurator = SlProduitESConfigurator::class;
+
+    protected $searchRules = [
+        //
+    ];
+
+    protected $mapping = [
+        'properties' => [
+            'langue' => [
+                'type' => 'text',
+                'analyzer' => 'french', //On détermine quel analyzer est utilisé pour indexer les valeurs du champ langue
+            ],
+            'formule' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'categorie' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'hebergements' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'villes' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'pays' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'modes_transports' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'accroche' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+            'introduction' => [
+                'type' => 'text',
+                'analyzer' => 'french',
+            ],
+        ],   
+    ];
+}
+```
+
+## L'Analyzer dans la Requête 
+
+Enfin, il est possible d'appliquer un analyzer sur les requêtes textuelles avant qu'elles ne soient traitées par Elasticsearch. 
+
+Il suffit souvent d'ajouter la phrase suivante : 
+> `"analyzer" : "nomDeLanalyzer"`
+
+Par exemple : 
+```json
+POST sl_produit_es/sl_produit_e_ss/_search
+{
+    "query" : {
+        "multi_match" : {
+           "query" : "sejour parent enfant",
+           "fields" : ["cms.accroche","cms.introduction"],
+           "analyzer" : "french"
+        }
+    }
+}
+```
+
+Le plus performant sera une recherche analysée, faite sur un index ayant lui aussi été analysé, le tout par le même analyzer. 
+
 # Recherche par ID
 
 Afin de récupérer les informations indexées dans un document spécifique, on utilise le code suivant : `GET /index/type/id`
@@ -77,9 +226,54 @@ On recherche tous les documents dont un ou plusieurs champs possèdent exactemen
 
 # Recherche par Requête - Chaines de caractères
 
-## Match et variantes :
+## Match :
 
-`Match` attaque la chaine de caractère entière.
+`Match` est la méthode standart permettant de faire de la recherche textuelle. 
+
+Exemple simple :  
+```json
+POST /_search
+{
+    "query" : {
+        "match" : {
+            "sejour" : "formation professionnelle linguistique"
+        }
+    }
+}
+```
+
+Plusieurs outils sont inclus dans le match dont le principal est `fuzzi`. Une des manières de tolérer les fautes de frappes. 
+
+
+Ses paramètres :
+* `fuzziness` : Détermine combien de caractères peuvent ne pas être dans le mot pour le valider comme résultat possible. Par défaut la valeur est `"AUTO"`.
+* `prefix_lenght` : Le nombres de caractères initiaux non concernés par le `fuzzy`. Cela permet de réduire le nombre de termes à examiner. Par défaut la valeur est `0`.
+* `max_expansions` : Le nombre maximal de combinaisons que tentera la méthode `fuzzy` afin d'obtenir un résultat. Par défaut la valeur est de `50`.
+* `fuzzy_transpositions` : Autorise les transpositions de caractères (ab -> ba). Par défaut la valeur est true.
+
+Exemple :  
+```json
+POST sl_produit_es/sl_produit_e_ss/_search
+{
+    "query" : {
+        "match" : {
+            "cms.formule" : {
+                "query" : "sejour parent enfant",
+                "fuzziness" : "AUTO",
+                "max_expansions" : 10,
+                "prefix_length": 1,
+                "fuzzy_transpositions" : false,
+            }
+        }
+    }
+}
+```  
+Résultat : 
+```json
+    "formule": "Séjour parents-enfants",
+```
+
+Les autres outils utilent avec le `match` sont [par là](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html).
 
 **Récupération de toutes les données du cluster :**
 
@@ -89,16 +283,38 @@ On recherche tous les documents dont un ou plusieurs champs possèdent exactemen
 *  2 - On indique que l'on souhaite faire une requête.
 *  3 - "match_all" permet de récupérer tout les documents et leurs champs/valeurs du cluster
 
-match_all
-match
-multi_match -> types de multi_match (most/best/cross/phrase/phrase_prefix)
-match_phrase
-match_phrase_prefix
 
-**Documentation supplémentaire** : Tous les détails et subtilités de la propriété match [ici dans la documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/full-text-queries.html).
+**Le multi-match**
+
+Le `multi_match` permet de faire une recherche textuelle sur plusieurs champs. 
+
+Exemple : 
+```JSON
+POST sl_produit_es/sl_produit_e_ss/_search
+{
+    "query" : {
+        "multi_match" : {
+           "query" : "sejour parent enfant",
+           "fields" : ["cms.accroche","cms.introduction"]
+        }
+    }
+}
+
+
+```
+Lors de l'utilisation du `multi_match` il est possible d'ajouter une option de recherche appellée `type` que l'on retrouve  [ici dans la documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html).  
+Ses paramètres :
+* `best_fields` : Par défaut. Cherche les documents qui matchent avec n'importe quel champ, mais utilises le score de clui qui retourne le meilleur score.
+* `most_fields` : Cherche les documents qui matchent avec n'importe quel champ et combine les scores de chaque champ matchant.
+* `cross_fields` : Traite les champs avec le même `analyzer` comme si ils n'étaient qu'un seul et unique champ. Cherche chaque mot dans n'importe quel champ.
+* `phrase` : Lance une requête `match_phrase` sur chaque champ et combine le score de chaque champ. [Renseignements](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html#type-phrase).
+* `phrase_prefix` : Lance une requête `match_phrase_prefix` sur chaque champs et combine les scores de chaque champ. [Renseignements](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html#type-phrase).
+
+**Documentation supplémentaire** : Tous les détails et subtilités de la propriété match [ici dans la documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/full-text-queries.html). 
+
 ## Query string :
 
-`Query_string` attaque la chaine de caractère en la segmentant en tokens. (1 token = 1 "mot").
+`Query_string` est la méthode avancée de recherche textuelle, agrémentée de la syntaxe Lucene. Cette méthode attaque la chaine de caractère en la segmentant en tokens. (1 token = 1 "mot").
 
 fuziness
 wildcard
@@ -166,6 +382,6 @@ POST sl_produit_es/sl_produit_e_ss/_search
 }
 ```
 
-# Analyzer
+
 
 # Aggregations
