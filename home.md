@@ -15,7 +15,7 @@
 
 # Installation et configuration d'ElasticSearch
 
-- [Installation sur Windows](../p2/Installation) OK
+- [Installation sur Windows](../p2/Installation-windows) OK
 - [Installation sur Linux](../p2/Installation-linux)
 - [Installer un plugin](../p2/Plugin) OK
 
