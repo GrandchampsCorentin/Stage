@@ -316,11 +316,11 @@ Ses paramètres :
 
 `Query_string` est la méthode avancée de recherche textuelle, agrémentée de la syntaxe Lucene.
 
-fuziness : Accepte les fautes de frappe
-wildcard : Accepte l'oubli d'une ou de plusieurs lettres
-recherche de proximité : Accepte que l'ordre des mots de la requête textuelle soit différent de celui proposé
-range : Accepte des intervalles de dates / nombres / chaines de caractères
-caractères réservés : `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
+* Fuziness : Accepte les fautes de frappe  
+* Wildcard : Accepte l'oubli d'une ou de plusieurs lettres     
+* Recherche de proximité : Accepte que l'ordre des mots de la requête textuelle soit différent de celui proposé   
+* Range : Accepte des intervalles de dates / nombres / chaines de caractères    
+* Caractères réservés : `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
 
 **Documentation supplémentaire** : Tous les détails et subtilités de la propriété query_string [ici dans la documentation Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html).
 
