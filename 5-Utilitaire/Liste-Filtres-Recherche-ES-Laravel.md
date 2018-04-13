@@ -1,8 +1,11 @@
 # La recherche
 
 * **Recherche "propre"**  
+
 > `$résultat = MonModele::search('*')->get();`
-* **Pour les recherches complexes**
+
+* **Pour les recherches complexes**  
+
 > `$résultat = MonModele::searchRaw([  
 >    traitement sous forme de tableaux PHP traduit en JSON  
 >    ]);`
