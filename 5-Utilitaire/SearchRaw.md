@@ -47,7 +47,7 @@ $result = MyModel::searchRaww([
 ]);
 ```
 
-*Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
+* Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
 
 ```php
 $tabTermes = ["un", "deux", "trois", "quatre", "cinq"];
