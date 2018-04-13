@@ -1,6 +1,7 @@
 # Liste d'exemples de requêtes avec "searchRaw"
 
-* Phrase - Un champ - Sans analyzer - La correspondance doit être de 100%   
+* Phrase - Un champ - Sans analyzer - La correspondance doit être de 100%
+
 ```php
 $maRequete = "une phrase au hasard";
 
@@ -14,6 +15,7 @@ $result = MyModel::searchRaw([
 ```
 
 * Phrase - Plusieurs champs - Avec analyzer - La correspondance peut ne pas être à 100%   
+
 ```php
 $maRequete = "une phrase au hasard";
 $tabChamps = ['champ1', 'champ2', 'champ3'];
@@ -46,6 +48,7 @@ $result = MyModel::searchRaww([
 ```
 
 *Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
+
 ```php
 $tabTermes = ["un", "deux", "trois", "quatre", "cinq"];
 
