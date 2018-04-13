@@ -10,23 +10,28 @@
 # ElasticSearch : Concept et Jargon
 
 - [Concept](../1-Concept/Concept)
-- [Jargon](../1-Concept/Terminologie) En construction
+- [Jargon](../1-Concept/Terminologie)
 
 
 # Installation et configuration d'ElasticSearch
 
-- [Installation sur Windows](../2-Installation/Installation-windows) OK
+- [Installation sur Windows](../2-Installation/Installation-windows) 
 - [Installation sur Linux](../2-Installation/Installation-linux)
-- [Installer un plugin](../2-Installation/Plugin) OK
+- [Installer un plugin](../2-Installation/Plugin) 
 
 # Utilisation d'ElasticSearch
 
-- [Index et Documents](../3-Elasticsearch/apprentissage) En construction
-- [La recherche avec ES](../3-Elasticsearch/Recherche) En construction
+- [Index et Documents](../3-Elasticsearch/apprentissage) 
+- [La recherche avec ES](../3-Elasticsearch/Recherche)
 
 # Laravel et Elasticsearch
 
-- [Ajout d'Elasticsearch à Laravel](../4-Laravel/Configuration-de-Laravel) OK
+- [Ajout d'Elasticsearch à Laravel](../4-Laravel/Configuration-de-Laravel) 
 - [Index et Modèles](../4-Laravel/Index-et-modeles)
 - [Requêtes dans Laravel](../4-Laravel/Requêtes-dans-Laravel)
 
+# Utilitaire
+
+- [Commandes création d'Index rapide avec Laravel](../5-Utilitaire/Creation-Index-Laravel) 
+- [Toutes les commandes php artisan pour ES et Laravel](../5-Utilitaire/Liste-Commandes-ES-Laravel)
+- [Extentions et outils](../5-Utilitaire/Outils)
