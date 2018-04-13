@@ -187,26 +187,6 @@ App\MyModel::search('Brazil')
     ->get();
 ```
 
-# Les filtres disponibles
-
-Il existe un petit nombre de filtres variés :
-
-|Method	| Example |	Description |
-| :-: | :-: | :-: |
-|where($field, $value)	|where('id', 1)|	Vérifie l'égalité ed'une simple valeur.|
-|where($field, $operator, $value)|	where('id', '>=', 1)|	Filtre les enregistrements avec la contrainte d'une règle donnée. Les opérateurs utilisables sont : =, <, >, <=, >=, <>.|
-|whereIn($field, $value)	|where('id', [1, 2, 3])	|Vérifie si une valeur appartient à un champ spécifique.|
-|whereNotIn($field, $value)	|whereNotIn('id', [1, 2, 3])|	Vérifie si une valeur n'appartient pas à un champ spécifique.|
-|whereBetween($field, $value)	|whereBetween('price', [100, 200])	|Vérifie si une valeur est dans un intervalle donné.|
-|whereNotBetween($field, $value)|	whereNotBetween('price', [100, 200])|	Vérifie si une valeur n'est pas dans un intervalle donné.|
-|whereExists($field)	|whereExists('unemployed')	|Vérifie si une valeur est définie.|
-|whereNotExists($field)	|whereNotExists('unemployed')	|Vérifie si une valeur n'est pas définie.|
-|whereRegexp($field, $value, $flags = 'ALL')	|whereRegexp('name.raw', 'A.+')	|Filtre les enregistrements en fonction d'une expression régulière choisie. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/query-dsl-regexp-query.html#regexp-syntax) vous trouverez des renseignements sur la syntaxe.|
-|whereGeoDistance($field, $value, $distance)|	whereGeoDistance('location', [-70, 40], '1000m')	|Filtre les enregistrements en fonction d'un point donné et d'un écart donné entre le point et la localisation. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html) des renseignements supplémentaies syntaxiques.|
-|whereGeoBoundingBox($field, array $value)|	whereGeoBoundingBox('location', ['top_left' => [-74.1, 40.73], 'bottom_right' => [-71.12, 40.01]])|	Filtre les enregistrements avec des spécifications données. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-query.html) des renseignements supplémentaies syntaxiques.|
-|whereGeoPolygon($field, array $points)	| whereGeoPolygon('location',[[-70, 40], [-80, 30], [-90, 20]])	| Filtre les enregistrements dans un polygone. [Ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-polygon-query.html) des renseignements supplémentaies syntaxiques.|
-
-
 # Migrations sans ralentissement
 
 On ne peut pas changer le type des champs déjà créés dans Elasticsearch. La seule façon de faire est de créer un nouvel index avec le mapping correct et d'importer le modèle dans ce nouvel index.  
