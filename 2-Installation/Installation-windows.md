@@ -11,19 +11,6 @@ Pour ce faire, suivez ce lien : [https://www.java.com/fr/download/manual.jsp](ht
 Pour éviter ce problème d'automatisme de l'installeur proposé par défaut, il est nécessaire de choisir celui qui porte le nom `Windows Hors ligne (64 bits)`, comme montré ci-dessous.
 ![Java8-64bits](../images/Java8-64bits.PNG)
 
-### Les outils qui facilitent la vie
-
-*  Comme vous êtes des utilisateurs de Google Chrome, il existe une extension qui propose une interface graphique de gestion et de traitement des Clusters, des Nodes, des Index et des Documents existant, un peu comme un phpMyAdmin. 
-
-Vous pourrez vous la procurer ici : [Elasticsearch Head](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm)
-
-L'extension n'est pas design mais semble faire le travail comme il se doit. 
-
-*  Je vous propose un autre outil qui permettra de faciliter les tests d'appels URL : [Sense](https://github.com/StephaneBour/sense-chrome)
-
-Il n'est plus à jour, et n'est plus officiellement utilisé par ElasticSearch, mais fait très bien son job. 
-Pour l'installer, il suffit de suivre les étapes proposées sur le git qui est linké au dessus.
-
 ## ElasticSearch
 
 Téléchargez ElasticSearch 6.2.2 à cette adresse : [https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.msi).
