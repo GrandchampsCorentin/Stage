@@ -2,7 +2,7 @@
 
 * Phrase - Un champ - Sans analyzer - La correspondance doit être de 100%
 
-```php
+```php  
 $maRequete = "une phrase au hasard";
 
 $result = MyModel::searchRaw([
@@ -11,12 +11,12 @@ $result = MyModel::searchRaw([
             'monChamp' => $maRequete,
         ],
     ],
-]);
+]);  
 ```
 
 * Phrase - Plusieurs champs - Avec analyzer - La correspondance peut ne pas être à 100%   
 
-```php
+```php  
 $maRequete = "une phrase au hasard";
 $tabChamps = ['champ1', 'champ2', 'champ3'];
 $typeTraitement = 'best_fields'; //Voir documentation 
@@ -31,11 +31,11 @@ $result = MyModel::searchRaw([
             'analyzer' => $analyzer,
         ],
     ],
-]);
+]);  
 ```
 
 * Un terme - Un champ - La correspondance doit être de 100% - Pas analysable   
-```php
+```php  
 $monTerme = "test";
 
 $result = MyModel::searchRaww([
@@ -44,12 +44,12 @@ $result = MyModel::searchRaww([
             'monChamp' => $monTerme,
         ],
     ],
-]);
+]);  
 ```
 
 * Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
 
-```php
+```php  
 $tabTermes = ["un", "deux", "trois", "quatre", "cinq"];
 
 $result = MyModel::searchRaw([
@@ -58,5 +58,5 @@ $result = MyModel::searchRaw([
             'monChamp' => $tabTermes,
         ],
     ],
-]);
+]);  
 ```
