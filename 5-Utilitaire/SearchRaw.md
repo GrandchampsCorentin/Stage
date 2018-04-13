@@ -38,7 +38,7 @@ $result = MyModel::searchRaw([
 ```php  
 $monTerme = "test";
 
-$result = MyModel::searchRaww([
+$result = MyModel::searchRaw([
     'query' => [
         'term' => [
             'monChamp' => $monTerme,
@@ -51,6 +51,7 @@ $result = MyModel::searchRaww([
 * Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
 
 ```php  
+
 $tabTermes = ["un", "deux", "trois", "quatre", "cinq"];
 
 $result = MyModel::searchRaw([
