@@ -34,4 +34,6 @@
 
 - [Commandes création d'Index rapide avec Laravel](../5-Utilitaire/Creation-Index-Laravel) 
 - [Toutes les commandes php artisan pour ES et Laravel](../5-Utilitaire/Liste-Commandes-ES-Laravel)
-- [Extentions et outils](../5-Utilitaire/Outils)
+- [Liste des filtres de recherche avec Laravel](../5-Utilitaire/Liste-Filtres-Recherche-ES-Laravel)
+- [Exemples SearchRaw](../5-Utilitaire/SearchRaw)
+- [Outils et Astuces](../5-Utilitaire/Outils-et-Astuces)
