@@ -7,8 +7,8 @@
 * **Pour les recherches complexes**  
 
 > `$résultat = MonModele::searchRaw([  
->    traitement sous forme de tableaux PHP traduit en JSON  
->    ]);`
+>     traitement sous forme de tableaux PHP traduit en JSON  
+> ]);`
 
 # Les filtres "where" disponibles
 
