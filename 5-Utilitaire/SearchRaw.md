@@ -34,7 +34,7 @@ $result = MyModel::searchRaw([
 ]);  
 ```
 
-* Un terme - Un champ - La correspondance doit être de 100% - Pas analysable   
+* Un terme - Un champ - La correspondance doit être de 100% - Pas analysable    
 ```php
 $monTerme = "test";
 
@@ -46,11 +46,7 @@ $result = MyModel::searchRaw([
     ],
 ]);  
 ```
-```php  
 
-```
-```
-`test`
 * Plusieurs termes - Un champ - La correspondance doit être de 100%  - Pas analysable   
 
 ```php  
